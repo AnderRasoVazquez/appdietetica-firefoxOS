@@ -1,0 +1,49 @@
+<html>
+
+    <head>
+        <!--<script type="text/javascript" src="script.js"></script>-->
+        <script type="text/javascript">
+        function processForm() {
+    
+            var temperature = Number(document.tempForm.temp.value);
+            var tempType;
+            var result;
+
+            for (var i=0; i < document.tempForm.choice.length; i++) {
+                
+                if (document.tempForm.choice[i].checked) {
+                    tempType = document.tempForm.choice[i].value;
+                }
+            }
+
+            if (tempType == 'fahrenheit') {
+                result = temperature * 9/5 + 32;
+            }
+            
+            else {
+                result = (temperature -  32)  *  5/9;
+            }
+            
+            // Assign the result field value here
+            document.tempForm.resultField.value = result;
+        }
+        </script>
+    </head>
+
+    <body>
+        <form name="tempForm">
+            <label for="temp">Temperature:</label>
+            <input type="text" id="temp"><br>
+
+            <input type="radio" name="choice" value="fahrenheit" checked />Convert to Fahrenheit <br>
+            <input type="radio" name="choice" value="celsius">Convert to Celsius  <br>
+
+            <label for="resultField">Result: </label>
+            <input type="text" id="resultField"><br>
+
+            <input type="button" value="Convert" onclick="processForm()">
+        </form>
+
+    </body>
+
+</html>
