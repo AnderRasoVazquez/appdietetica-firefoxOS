@@ -83,7 +83,7 @@
 }
 
 /* === Estilos del boton de Envio === */
-a {
+a.formButton {
 	text-decoration: none;
    padding: 9px 17px;
    font-family: Helvetica, Arial, sans-serif;
@@ -98,9 +98,9 @@ a {
    border-radius: 10px;
    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-a:hover {
+a.formButton:hover {
     color: #fff;
 }
-a:active {
+a.formButton:active {
     box-shadow: 0 0 10px 5px #444 inset; 
 }
