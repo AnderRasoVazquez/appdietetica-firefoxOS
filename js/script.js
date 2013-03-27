@@ -50,10 +50,10 @@ function processForm() {
         var mb = a+(b*peso)+(c*altura)-(d*edad);
         // Estas 2 variables indicarán el resultado
         var mbInfo = Math.floor(mb)+' Kcal';
-        var error = 'Tienes que definir todos los campos.';
+        var errorFaltaDato = 'Te faltan campos por rellenar.';
         // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
         if( altura===0 || edad===0 || peso===0 ){
-            document.calcForm.resultado.value = error;
+            document.calcForm.resultado.value = errorFaltaDato;
         } else {
             document.calcForm.resultado.value = mbInfo;
         }
