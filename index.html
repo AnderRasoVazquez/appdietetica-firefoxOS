@@ -15,6 +15,7 @@
         <!-- Cabecera -->
         <header data-role="header" data-theme="b">
             <h1>Metabolismo Basal</h1>
+            <a href="#" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b" data-inline="true">Info</a>
         </header><!-- /header -->
         
         <!-- Formulario para calcular el metabolismo basal -->
@@ -33,9 +34,9 @@
                 <input type="text" name="altura" id="altura" value="" />
             </div>
             <!-- Edad -->
-            <div data-role="fieldcontain" data-theme="b">
+            <div data-role="fieldcontain">
                 <label for="edad">Edad</label>
-                <input type="text" name="edad" id="edad" value="" />
+                <input type="range" name="edad" id="edad" value="25" min="0" max="100" />
             </div>
             <!-- Peso -->
             <div data-role="fieldcontain">
@@ -50,6 +51,8 @@
             <!-- Botón -->
             <a href="#" data-role="button" data-icon="check" data-iconpos="left" onclick="processForm()" data-theme="e">Calcular Metabolismo</a>
         </form>
+
+        
 
         <!-- Pie de página -->
         <footer data-role="footer" data-theme="b">
