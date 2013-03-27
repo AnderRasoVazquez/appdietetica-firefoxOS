@@ -5,30 +5,48 @@
         <meta charset="UTF-8">
         <title>Título</title>
         <script type="text/javascript" src="js/script.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
-        <h1>CALCULADORA DEL METABOLISMO</h1>
-        <form name="calcForm">
-            <label>Selecciona el sexo</label>
-            <select name="sexo">
-                <!-- selected indica la opcion marcada por defecto -->
-                <option value="Hombre">Hombre</option>
-                <option value="Mujer">Mujer</option>
-            </select><br>
-
-            <label for="altura">Altura (cm):</label>
-            <input type="text" id="altura" name="altura"><br>
-
-            <label for="edad">Edad:</label>
-            <input type="text" id="edad" name="edad"><br>
-
-            <label for="peso">Peso (kg):</label>
-            <input type="text" id="peso" name="peso"><br>
-
-            <input type="checkbox" /><label>Añadir el 10% de lo que se gasta en digestión.</label><br>
-            <div id="mbInfo"></div>
-            <input type="button" value="Calcular" onclick="processForm()">
+        
+        <form name="calcForm" class="contact_form">
+            <ul>
+                <li>
+                    <h2>CALCULADORA DEL METABOLISMO</h2>
+                </li>
+                <li>
+                    <label>Selecciona el sexo</label>
+                    <select name="sexo">
+                        <!-- selected indica la opcion marcada por defecto -->
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="altura">Altura (cm):</label>
+                    <input type="text" id="altura" name="altura" required />
+                </li>
+                <li>
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" required />
+                </li>
+                <li>
+                    <label for="peso">Peso (kg):</label>
+                    <input type="text" id="peso" name="peso" required />
+                </li>
+                <!-- <li>
+                    <label>+10% Por digestión</label>
+                    <input class="checkbox" type="checkbox" />
+                </li> -->
+                <li>
+                    <label for="resultado">Resultado (kg):</label>
+                    <input type="text" id="resultado" name="resultado" class="resultado" required />
+                </li>
+                <li>
+                    <a href="#" onclick="processForm()">Procesar</a>
+                </li>
+            </ul>
         </form>
     </body>
 
