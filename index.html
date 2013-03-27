@@ -12,44 +12,49 @@
     </head>
 
     <body>
+        <!-- Cabecera -->
+        <header data-role="header">
+            <h1>Metabolismo Basal</h1>
+        </header><!-- /header -->
         
+        <!-- Formulario para calcular el metabolismo basal -->
         <form name="calcForm" class="contact_form">
-            <ul>
-                <li>
-                    <h2>CALCULADORA DEL METABOLISMO BASAL</h2>
-                </li>
-                <li>
-                    <label>Selecciona el sexo</label>
-                    <select name="sexo">
-                        <!-- selected indica la opcion marcada por defecto -->
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
-                    </select>
-                </li>
-                <li>
-                    <label for="altura">Altura (cm):</label>
-                    <input type="text" id="altura" name="altura" required />
-                </li>
-                <li>
-                    <label for="edad">Edad:</label>
-                    <input type="text" id="edad" name="edad" required />
-                </li>
-                <li>
-                    <label for="peso">Peso (kg):</label>
-                    <input type="text" id="peso" name="peso" required />
-                </li>
-                <!-- <li>
-                    <label>+10% Por digestión</label>
-                    <input class="checkbox" type="checkbox" />
-                </li> -->
-                <li>
-                    <label for="resultado">Resultado (kg):</label>
-                    <input type="text" id="resultado" name="resultado" class="resultado" required />
-                </li> 
-            </ul>
-            <br>
-            <a class="formButton" href="#" onclick="processForm()">Procesar</a>
+            <!-- Sexo -->
+            <div data-role="fieldcontain">
+                <label for="sexo" class="select">Sexo:</label>
+                <select id="sexo" name="sexo" data-native-menu="false">
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                </select>
+            </div>
+            <!-- Altura -->
+            <div data-role="fieldcontain">
+                <label for="altura">Altura (cm)</label>
+                <input type="text" name="altura" id="altura" value="" />
+            </div>
+            <!-- Edad -->
+            <div data-role="fieldcontain">
+                <label for="edad">Edad</label>
+                <input type="text" name="edad" id="edad" value="" />
+            </div>
+            <!-- Peso -->
+            <div data-role="fieldcontain">
+                <label for="peso">Peso (kg)</label>
+                <input type="text" name="peso" id="peso" value="" />
+            </div>
+            <!-- Resultado -->
+            <div data-role="fieldcontain">
+                <label for="resultado">Resultado</label>
+                <input type="text" name="resultado" id="resultado" value="" />
+            </div>
+            <!-- Botón -->
+            <a href="#" data-role="button" onclick="processForm()">Calcular Metabolismo</a>
         </form>
+
+        <!-- Pie de página -->
+        <footer data-role="footer">
+            <h1>Diseño Ander Raso</h1>
+        </footer><!-- /footer -->
     </body>
 
 </html>
