@@ -1,4 +1,4 @@
-calculadora_metabolismo
+Calculadora del Metabolismo (kcal)
 =======================
 
-Este proyecto tienen la intención de crear una calculadora de metabolismo en JavaScript y HTML.
+Este proyecto tienen la intención de crear una calculadora de metabolismo a partir de JavaScript y HTML.
