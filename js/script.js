@@ -11,6 +11,7 @@ function processForm() {
     var peso = Number(document.calcForm.peso.value);
     // Definimos todas las variables cuyos valores cambiarán dependiendo del sexo
     var a, b, c, d, actLigera, actModerada, actIntensa;
+
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
 
     // DATOS PARA METABOLISMO BASAL - HOMBRE
