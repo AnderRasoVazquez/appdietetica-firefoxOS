@@ -18,9 +18,9 @@
 
             <!-- Header -->
             <header data-role="header" data-theme="b" data-position="fixed">
-                <a href="#nav-panel" data-icon="home">Inicio</a>
+                <a href="#popupCloseRight" data-icon="home" data-rel="popup" data-position-to="window">Inicio</a>
                 <h1>Calculadora Metabolismo</h1>
-                <a href="#nav-panel" data-icon="bars">Menú</a>
+                <a href="#popupCloseRight" data-icon="bars" data-rel="popup" data-position-to="window">Menú</a>
             </header><!-- /header -->
 
             <!-- Contenido -->
@@ -76,9 +76,9 @@
 
             <div data-role="footer" class="ui-bar"data-position="fixed" data-theme="b">
                 <a href="#nav-panel" data-icon="info">Info</a>
-                <a href="#nav-panel" data-icon="plus">Add</a>
-                <a href="#nav-panel" data-icon="arrow-u">Up</a>
-                <a href="#nav-panel" data-icon="arrow-d">Down</a>
+                <a href="#popupCloseRight" data-icon="plus" data-rel="popup" data-position-to="window">Add</a>
+                <a href="#popupCloseRight" data-icon="arrow-u" data-rel="popup" data-position-to="window">Up</a>
+                <a href="#popupCloseRight" data-icon="arrow-d" data-rel="popup" data-position-to="window">Down</a>
             </div>
 
             <!-- Panel izquierdo -->
@@ -91,11 +91,19 @@
                     <p>Esta calculadora del metabolismo ha sido desarrollada por Ander Raso.</p>
                     <p><strong>Fallos conocidos</strong></p>
                     <ul>
-                        <li>El separador de decimales es el punto no la coma.</li>
+                        <li>(En progreso) El separador de decimales es el punto no la coma.</li>
                         <li>La gente tiene que saber que no son las calorías totales.</li>
                     </ul>
                 </div> 
             </div><!-- /panel -->
+
+            <!-- Popup -->
+            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>De momento, el único botón que tiene una función es el de "Info". ¿Por qué no lo pruebas?</p>
+            </div>
+            <!-- /popup -->
+
         </div> <!-- /pagina -->
 
     </body>
