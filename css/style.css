@@ -1,7 +1,7 @@
-.calcForm {
-    margin-right: 20px;
-    margin-left: 20px;
-}
+/*.calcForm {
+    margin-right: 0px;
+    margin-left: 0px;
+}*/
 
 #sexo {
     font-size: 20px;
@@ -20,3 +20,4 @@
 p:first-child {
     margin-top: 20px;
 }
+
