@@ -12,52 +12,78 @@
     </head>
 
     <body>
-        <!-- Cabecera -->
-        <header data-role="header" data-theme="b">
-            <h1>Metabolismo Basal</h1>
-            <a href="#" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b" data-inline="true">Info</a>
-        </header><!-- /header -->
-        
-        <!-- Formulario para calcular el metabolismo basal -->
-        <form name="calcForm" class="calcForm">
-            <!-- Sexo -->
-            <div data-role="fieldcontain">
-                <label for="sexo" class="select">Sexo:</label>
-                <select id="sexo" name="sexo" data-native-menu="false">
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
-                </select>
-            </div>
-            <!-- Altura -->
-            <div data-role="fieldcontain">
-                <label for="altura">Altura (cm)</label>
-                <input type="text" name="altura" id="altura" value="" />
-            </div>
-            <!-- Edad -->
-            <div data-role="fieldcontain">
-                <label for="edad">Edad</label>
-                <input type="range" name="edad" id="edad" value="25" min="0" max="100" />
-            </div>
-            <!-- Peso -->
-            <div data-role="fieldcontain">
-                <label for="peso">Peso (kg)</label>
-                <input type="text" name="peso" id="peso" value="" />
-            </div>
-            <!-- Resultado -->
-            <div data-role="fieldcontain">
-                <label for="resultado">Resultado</label>
-                <input type="text" name="resultado" id="resultado" value="" />
-            </div>
-            <!-- Botón -->
-            <a href="#" data-role="button" data-icon="check" data-iconpos="left" onclick="processForm()" data-theme="e">Calcular Metabolismo</a>
-        </form>
 
-        
+        <!-- Página 1 -->
+        <div data-role="page" class="pagina1" id="pagina1" data-url="panel-fixed-page1">
 
-        <!-- Pie de página -->
-        <footer data-role="footer" data-theme="b">
-            <h1>Diseño Ander Raso</h1>
-        </footer><!-- /footer -->
+            <!-- Header -->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Metabolismo Basal</h1>
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            </header><!-- /header -->
+
+            <!-- Contenido -->
+            <div data-role="content" class="contenido">
+                <!-- Formulario para calcular el metabolismo basal -->
+                <form name="calcForm" class="calcForm">
+                    <!-- Sexo -->
+                    <div data-role="fieldcontain" id="sexo">
+                        <label for="flip-6">Sexo</label>
+                        <select name="sexo" id="flip-6" data-role="slider" data-track-theme="e" data-theme="c">
+                            <option value="Mujer">Mujer</option>
+                            <option value="Hombre" selected>Hombre</option>
+                        </select>
+                    </div>
+                    <!-- Altura -->
+                    <div data-role="fieldcontain">
+                        <label for="altura">Altura (cm)</label>
+                        <input type="text" name="altura" id="altura" value="" />
+                    </div>
+                    <!-- Edad -->
+                    <div data-role="fieldcontain">
+                        <label for="edad">Edad</label>
+                        <input type="range" name="edad" id="edad" value="25" min="0" max="100" />
+                    </div>
+                    <!-- Peso -->
+                    <div data-role="fieldcontain">
+                        <label for="peso">Peso (kg)</label>
+                        <input type="text" name="peso" id="peso" value="" />
+                    </div>
+                    <!-- Resultado -->
+                    <div data-role="fieldcontain">
+                        <label for="resultado">Resultado</label>
+                        <input type="text" name="resultado" id="resultado" value="" />
+                    </div>
+                    <!-- Botón -->
+                    <a href="#" data-role="button" data-icon="check" data-iconpos="left" onclick="processForm()" data-theme="e">Calcular Metabolismo</a>
+                </form>
+            </div>
+
+            <!-- Pie de página -->
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h1>Diseño Ander Raso</h1>
+            </footer><!-- /footer -->
+
+            <!-- Panel izquierdo -->
+            <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+                <ul data-role="listview" data-theme="a" class="nav-search">
+                    <li data-icon="delete"><a href="#" data-rel="close">Información de la versión</a></li>
+                </ul>
+                <div>
+                    <p><strong>Versión 1.0</strong></p>
+                    <p>Esta calculadora del metabolismo ha sido creada por Ander Raso.</p>
+                    <p><strong>Fallos conocidos</strong></p>
+                    <ul>
+                        <li>El separador de decimales es el punto no la coma</li>
+                        <li>La gente tiene que saber que no son las calorías totales.</li>
+                    </ul>
+
+                </div>
+                
+            </div><!-- /panel -->
+
+        </div>
+
     </body>
 
 </html>
