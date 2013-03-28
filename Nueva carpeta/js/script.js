@@ -55,11 +55,11 @@ function mbForm() {
         var mbInfo = Math.floor(mb)+' Kcal';
         var errorFaltaDato = 'Te faltan campos por rellenar.';
         // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
-        if( altura===0 || edad===0 || peso===0 ){
-            document.calcForm.resultado.value = errorFaltaDato;
-        } else {
-            document.calcForm.resultado.value = mbInfo;
-        }
+        // if( altura===0 || edad===0 || peso===0 ){
+        //     document.calcForm.resultado.value = errorFaltaDato;
+        // } else {
+            document.calcForm.resultado.value = altura;
+        // }
 
         //!!!Muestra el resultado en una caja "confirm", si aceptamos calculara el METABOLISMO TOTAL, aceptamos?!!!!!!!!
 

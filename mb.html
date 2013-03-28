@@ -19,7 +19,7 @@
         <section id="page2" data-role="page" data-theme="b">
             <!-- Header -->
             <header data-role="header" data-theme="a" data-position="fixed">
-                <a href="#page1" data-icon="home" data-theme="b">Inicio</a>
+                <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
                 <h1>M-Basal</h1>
                 <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
             </header><!-- /header -->
@@ -47,18 +47,17 @@
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
                     <input type="text" name="resultado" id="resultado" value="" />
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="processForm()" data-theme="e">Calcular Resultado</a>
+                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="mbForm()" data-theme="e">Calcular Resultado</a>
                 </form>
             </article><!-- /content -->
 
-            <footer data-role="footer" data-position="fixed" data-theme="a" >
+            <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
                 <nav data-role="navbar" >
                     <ul>
-                        <li><a href="#" class="ui-btn-active">MB</a></li>
-                        <li><a href="#">MT</a></li>
-                        <li><a href="#">PI</a></li>
-                        <li><a href="#">ICC</a></li>
-                        <li><a href="#">IMC</a></li>
+                        <li><a href="mb.html" class="ui-btn-active">MB</a></li>
+                        <li><a href="pi.html">PI</a></li>
+                        <li><a href="icc.html">ICC</a></li>
+                        <li><a href="imc.html">IMC</a></li>
                     </ul>
                 </nav>
             </footer><!-- /footer -->

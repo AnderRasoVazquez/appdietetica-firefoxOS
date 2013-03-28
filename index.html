@@ -19,19 +19,29 @@
         <section id="page1" data-role="page">
             <!-- Header -->
             <header data-role="header">
-                <h1>Pagina de Inicio</h1>
+                <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
+                <h1>Jaufit v1.0</h1>
                 
             </header><!-- /header -->
 
             <!-- Contenido pagina 1 -->
-            <article data-role="content">
-                <p>Aquí irán los links</p>
-                <a href="mb.html" data-role="button">Metabolismo Basal</a>
+            <article data-role="content">    
+                
+                <ul data-role="listview" data-filter="true" data-count-theme="e" data-filter-placeholder="Filtrar fórmulas...">
+                	<li data-role="list-divider" >Tu lista de fórmulas corporales</li>
+                    <li><a href="mb.html">Metabolismo<span class="ui-li-count">Kcal</span></a></li>
+                    <li><a href="imc.html">IMC (Índice Masa Corporal)<span class="ui-li-count">Kg/cm<sup>2</sup></span></a></li>
+                    <li><a href="icc.html">ICC (Índice Cintura Cadera)<span class="ui-li-count">cm/cm</span></a></li>
+                    <li><a href="pi.html">Peso Ideal<span class="ui-li-count">Kg</span></a></li>
+                    
+                
+                </ul> 
+                
             </article><!-- /content -->
 
             <!-- Footer -->
-            <footer data-role="footer">
-                <h1>Pie de página</h1>
+            <footer data-role="footer" data-position="fixed">
+                <h4 style="font-size:0.9em">github/anderballer</h4>
             </footer><!-- /footer -->
 
 
