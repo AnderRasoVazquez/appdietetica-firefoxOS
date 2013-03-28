@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <title>Calculadora del metabolismo basal</title>
         <script type="text/javascript" src="js/script.js"></script>
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
@@ -18,8 +18,9 @@
 
             <!-- Header -->
             <header data-role="header" data-theme="b" data-position="fixed">
-                <h1>Metabolismo Basal</h1>
-                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+                <a href="#nav-panel" data-icon="home">Inicio</a>
+                <h1>Calculadora Metabolismo</h1>
+                <a href="#nav-panel" data-icon="bars">Menú</a>
             </header><!-- /header -->
 
             <!-- Contenido -->
@@ -60,9 +61,25 @@
             </div>
 
             <!-- Pie de página -->
-            <footer data-role="footer" data-position="fixed" data-theme="b">
+            <!-- <footer data-role="footer" data-position="fixed" data-theme="b">
                 <h1>Diseño por Ander Raso</h1>
-            </footer><!-- /footer -->
+            </footer> --><!-- /footer -->
+
+            <!-- <footer data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#nav-panel" data-icon="info">Info versión</a>
+                    <a href="#" data-icon="arrow-u">Página arriba</a>
+                    <a href="#" data-icon="arrow-d">Página abajo</a>
+                </div>
+                
+            </footer> -->
+
+            <div data-role="footer" class="ui-bar"data-position="fixed" data-theme="b">
+                <a href="#nav-panel" data-icon="info">Info</a>
+                <a href="#nav-panel" data-icon="plus">Add</a>
+                <a href="#nav-panel" data-icon="arrow-u">Up</a>
+                <a href="#nav-panel" data-icon="arrow-d">Down</a>
+            </div>
 
             <!-- Panel izquierdo -->
             <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
@@ -77,12 +94,9 @@
                         <li>El separador de decimales es el punto no la coma.</li>
                         <li>La gente tiene que saber que no son las calorías totales.</li>
                     </ul>
-
-                </div>
-                
+                </div> 
             </div><!-- /panel -->
-
-        </div>
+        </div> <!-- /pagina -->
 
     </body>
 
