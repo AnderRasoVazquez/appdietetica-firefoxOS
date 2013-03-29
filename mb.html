@@ -20,14 +20,14 @@
             <!-- Header -->
             <header data-role="header" data-theme="a" data-position="fixed">
                 <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
-                <h1>M-Basal</h1>
+                <h1>Metabolismo</h1>
                 <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
             </header><!-- /header -->
 
             <!-- Contenido Pagina 2 -->
             <article data-role="content" >
                 <!-- Formulario para calcular el metabolismo basal -->
-                <form name="calcForm" class="calcForm">
+                <form name="mbForm" class="calcForm">
                 <!-- Sexo -->
                     <label for="sexo">Sexo</label>
                     <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
@@ -47,7 +47,7 @@
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
                     <input type="text" name="resultado" id="resultado" value="" />
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="mbForm()" data-theme="e">Calcular Resultado</a>
+                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Basal</a>
                 </form>
             </article><!-- /content -->
 

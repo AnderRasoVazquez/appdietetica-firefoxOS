@@ -27,7 +27,7 @@
             <!-- Contenido Pagina 2 -->
             <article data-role="content" >
                 <!-- Formulario para calcular el metabolismo basal -->
-                <form name="calcForm" class="calcForm">
+                <form name="piForm" class="calcForm">
                 <!-- Sexo -->
                     <label for="sexo">Sexo</label>
                     <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
@@ -40,21 +40,18 @@
                 <!-- Edad -->
                     <label for="edad">Edad</label>
                     <input type="range" name="edad" id="edad" value="25" min="0" max="120" data-theme="a" data-track-theme="b" />
-                <!-- Peso -->
-                    <label for="peso">Peso (Kg)</label>
-                    <input type="text" name="peso" id="peso" value="" />
                 <!-- Resultado -->
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
                     <input type="text" name="resultado" id="resultado" value="" />
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="processForm()" data-theme="e">Calcular Resultado</a>
+                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
                 </form>
             </article><!-- /content -->
 
             <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
                 <nav data-role="navbar" >
                     <ul>
-                        <li><a href="mb.html" >MB</a></li>
+                        <li><a href="mb.html">MB</a></li>
                         <li><a href="pi.html" class="ui-btn-active">PI</a></li>
                         <li><a href="icc.html">ICC</a></li>
                         <li><a href="imc.html">IMC</a></li>
@@ -68,15 +65,11 @@
                     <li data-icon="delete"><a href="#" data-rel="close">¿Metabolismo Basal?</a></li>
                 </ul>
                 <div>
-                    <p>El metabolismo basal es el valor mínimo de energía necesaria para que la célula subsista, es decir, lo que un cuerpo necesita diariamente para seguir funcionando.</p>
+                    <p>Siempre andamos preocupados por el peso y una de las primeras cosas que debemos de preguntarnos es cuál es nuestro peso ideal. Hay muchas fórmulas para calcularlo, de entrada decir que ninguna es totalmente exacta, el peso ideal depende de muchas aspectos de la persona y lo más que se puede hacer es una estimación.</p>
 
-                    <p>Esta energía mínima es utilizada por la célula en las reacciones químicas intracelulares necesarias para la realización de funciones metabólicas esenciales, como es el caso de la respiración.</p>
+                    <p>Conviene no quedarse sólo en el dato que nos salga de la ecuación, es decir, si me sale que mi peso ideal es de 70 kilos, siempre hay que poner un rango de 5 kilos arriba y abajo, así nos quedaría un rango de peso ideal de (65-75), donde podemos decir que estamos dentro de un peso saludable.</p>
 
-                    <p>En el organismo, el metabolismo basal depende de varios factores, como sexo, talla, peso, edad, etc.</p>
-
-                    <p>Como claro ejemplo del metabolismo basal está el caso del coma. La persona «en coma», está inactiva, pero tiene un gasto mínimo de calorías, razón por la que hay que seguir alimentando al organismo.</p>
-
-                    <p> A ese cálculo hay que añadir las actividades extras que se pueden hacer cada día (metabolismo total). Una persona sana no ingerirá nunca menos de 1500 Kcal.</p>
+                    <p>El peso ideal depende mucho del somatotipo que tengamos y del tipo de deporte que practiquemos. No es lo mismo el peso ideal para un maratoniano que para una persona que no hace deporte, todo hay que contextualizarlo.</p>
                 </div> 
             </div>
             <!-- /panel -->

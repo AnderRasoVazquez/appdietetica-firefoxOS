@@ -15,7 +15,7 @@
     <body>
 
     
-        <!-- ###############   PAGINA 2 - ICC   ############### -->
+        <!-- ###############   PAGINA 4 - ICC   ############### -->
         <section id="page4" data-role="page" data-theme="b">
             <!-- Header -->
             <header data-role="header" data-theme="a" data-position="fixed">
@@ -26,27 +26,29 @@
 
             <!-- Contenido Pagina 2 -->
             <article data-role="content" >
-                <!-- Formulario para calcular el ICC -->
-                <form name="iccForm" class="iccForm">
+                <!-- Formulario para calcular el metabolismo basal -->
+                <form name="iccForm" >
                 <!-- Sexo -->
                     <label for="sexo">Sexo</label>
                     <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
                         <option value="Mujer">M</option>
                         <option value="Hombre" selected>H</option>
                     </select>
-                <!-- pCintura -->
+                <!-- Altura -->
                     <label for="pCintura">Perímetro Cintura (cm)</label>
                     <input type="text" name="pCintura" id="pCintura" value="" />
-                <!-- pCadera -->
+                <!-- Peso -->
                     <label for="pCadera">Perímetro Cadera (cm)</label>
                     <input type="text" name="pCadera" id="pCadera" value="" />
                 <!-- Resultado -->
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
                     <input type="text" name="resultado" id="resultado" value="" />
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="iccForm()" data-theme="e">Calcular Resultado</a>
+                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularICC()" data-theme="e">Calcular Índice Cintura Cadera</a>
                 </form>
             </article><!-- /content -->
+
+
 
             <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
                 <nav data-role="navbar" >
@@ -54,7 +56,7 @@
                         <li><a href="mb.html">MB</a></li>
                         <li><a href="pi.html">PI</a></li>
                         <li><a href="icc.html" class="ui-btn-active">ICC</a></li>
-                        <li><a href="imc.html">IMC</a></li>
+                        <li><a href="imc.html" >IMC</a></li>
                     </ul>
                 </nav>
             </footer><!-- /footer -->
