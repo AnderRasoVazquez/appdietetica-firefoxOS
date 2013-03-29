@@ -1,0 +1,271 @@
+<!DOCTYPE>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+<title>Fórmulas automáticas - Ander Raso</title>
+<style>
+body { background-image: url(http://subtlepatterns.com/patterns/ricepaper.png) }
+
+a {
+	position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 3em;
+    display: block;
+    padding: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 50px auto;
+	width: 225px;
+	text-align: center;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+a:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+</style>
+</head>
+<body>
+<script>
+//#################################################################################################################
+//#####################################----FUNCION METABOLISMO----#################################################
+
+var metabolismo = function(){
+	
+	//Información del tipo de fórmula
+	alert("Fórmula de Harris Benedict.");
+	
+	
+//----------PREGUNTAMOS POR EL SEXO PRIMERO YA QUE LOS SIGUIENTES DATOS DEPENDERÁN DEL SEXO-----------------
+
+	var sexo = prompt("¿Es un hombre o una mujer?");
+	//Para evitar problemas como escribir el sexo en mayúsculas, 
+	//al escribir el sexo nos lo pondrá en minúsculas
+	if(sexo !== null){sexo = sexo.toLowerCase();}
+	
+
+//--------------DATOS A RECOGER QUE NO DEPENDEN DEL SEXO--------------------------------
+
+	var edad = prompt("¿Edad?");
+	var peso = prompt("Peso (kg) (LOS DECIMALES SE DIVIDEN CON PUNTO Ej: 67.7)");
+	var altura = prompt("¿Altura (cm)?");
+
+
+//-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
+	
+	//DATOS PARA METABOLISMO BASAL - HOMBRE
+	//MB hombres = a + (b * peso) + (c * altura) – (d * edad)
+	if(sexo == "hombre" ){ 
+		var a = 66.4730;
+		var b = 13.7516;
+		var c = 5.0033;
+		var d = 6.7550;
+		//para dar un resultado personalizado: el MB de "ESTE HOMBRE" es...
+		var e = "este hombre";
+		
+	//DATOS PARA METABOLISMO TOTAL - HOMBRE
+		//Hombres -> MB x 1.60 = Actividad ligera, MB x 1.78 = Actividad moderada, MB x 2.10 = Actividad intensa
+		var actLigera = 1.60;
+		var actModerada = 1.78;
+		var actIntensa = 2.10;
+	}
+	
+	//DATOS PARA METABOLISMO BASAL - MUJER
+	//MB mujeres = a + (b * peso) + (c * altura) – (d * edad)
+	else if(sexo == "mujer" ){	
+		var a = 655.0955;
+		var b = 9.5634;
+		var c = 1.8496;
+		var d = 4.6756;
+		//para dar un resultado personalizado: el MB de "ESTA MUJER" es...
+		var e = "esta mujer";
+		
+	//DATOS PARA METABOLISMO TOTAL - MUJER
+		//Mujeres -> MB x 1.50 = Actividad ligera , MB x 1.64 = Actividad moderada , MB x 1.90 = Actividad intensa
+		var actLigera = 1.50;
+		var actModerada = 1.64;
+		var actIntensa = 1.90;
+	}
+
+//-------------------------------CALCULO DE DATOS-----------------------------------------
+
+//------ECUACION DEL METABOLISMO BASAL - calcula el resultado con los datos de arriba
+		var mb = a+(b*peso)+(c*altura)-(d*edad);
+		
+		//Muestra el resultado en una caja "confirm", si aceptamos calculara el METABOLISMO TOTAL, aceptamos?
+		var calcularTotal = confirm("El metabolismo basal de "+e+" es de "+Math.floor(mb)+" calorías. ¿Calculamos también el metabolismo total?");
+		
+		//Si aceptamos la variable "calcularTotal" es -> true, por lo tanto:
+		if(calcularTotal){
+			//Prompt para insertar el tipo de actividad que realiza, es necesario para calcular el METABOLISMO TOTAL...
+			//el valor de las variables actLigera, actMOderada y actIntensa...se han definido arriba dependiendo del sexo
+			var actividadFisica = prompt("Actividad ligera = "+actLigera+", Actividad moderada = "+actModerada+", Actividad intensa = "+actIntensa+" (SEPARAR DECIMALES CON UN PUNTO Ej: 1.50)");
+			
+//----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad
+			var mt = mb*actividadFisica;
+			
+			//Muestra con una alerta el METABOLISMO TOTAL ( la variable "e" dice: esta mujer || este hombre )
+			alert("El metabolismo total de "+e+" es de "+Math.floor(mt)+" calorías. Más el 10% de calorías gastadas en la digestión "+Math.floor(mt*1.10)+".");
+			}
+	}//Cierra LA FUNCIÓN metabolismo()
+
+//#####################################----FIN FUNCION METABOLISMO----#############################################
+//#################################################################################################################	
+	
+	
+	
+//#################################################################################################################
+//#####################################----FUNCION PESO IDEAL----##################################################
+
+var pesoIdeal = function(){
+	//Informa del tipo de formula que se esta utilizando
+	alert("Fórmula de Lorenzt.");
+	
+//----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
+	
+	var sexo = prompt("¿Es un hombre o una mujer?");
+	//Para evitar problemas como escribir el sexo en mayúsculas, 
+	//al escribir el sexo nos lo pondrá en minúsculas
+	if(sexo !== null){sexo = sexo.toLowerCase();}
+	//Preguntamos por la edad y altura
+	var edad = prompt("¿Edad?");
+	var altura = prompt("¿Altura (cm)?");
+
+//----------------------------CALCULO DE LA FORMULA----------------------------------------
+	//Peso Ideal = altura - 100 - [ ( altura - 150 ) / 4 ] + [ ( edad - 20 ) / k ]
+	// k = 4 (Hombres) ó 2,5 (Mujeres)
+	if(sexo == "hombre" ){var k=4;} else if(sexo == "mujer" ){var k=2.5}
+	//REALIZA EL CÁLCULO DEL PESO IDEAL
+	var pI = altura -100 - ((altura - 150) / 4) + ((edad - 20) / k)
+	//Nos avisa del resultado con una alerta
+	alert("El peso ideal de esta persona sería estar en "+Math.floor(pI)+" kg.");
+	}	
+	
+//#####################################----FIN FUNCION PESO IDEAL----##############################################
+//#################################################################################################################	
+
+
+
+//#################################################################################################################
+//#####################################----FUNCION IMC----#########################################################
+
+var imc = function(){
+	//Avisa de que la formula no vale en todos los casos (deportistas de elite y ancianos)
+	alert("Fórmula del IMC, aclarar que no vale para deportistas de élite ni ancianos.");
+	
+//----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
+	
+	var peso = prompt("Peso(kg) (LOS DECIMALES SE DIVIDEN CON PUNTO Ej: 67.7)");
+	var altura = prompt("Altura(m) (LOS DECIMALES SE DIVIDEN CON PUNTO Ej: 1.80)");
+	
+//----------------------------CALCULO DE LA FORMULA----------------------------------------
+	
+	var tuIMC = peso / (altura*altura)
+	/* -------- RESULTADO DE IMC ----------
+		Desnutrido	 <18,5
+		Normal	 18,5-24,9
+		Sobrepeso grado I	 25-26,9
+		Sobrepeso grado II	 27-29,9
+		Obesidad tipo I	 30-34,6
+		Obesidad tipo II	 35-39,9
+		Obesidad tipo III(mórbida)	 40-49,9
+	*/
+	if(tuIMC>=10 && tuIMC<18.5){resultadoIMC = " está desnutrido: <18,5 (valores normales: 18,5-24.9)";}
+	else if(tuIMC>=18.5 && tuIMC<=24.9){resultadoIMC = " está en los valores normales: 18,5-24.9";}
+	else if(tuIMC>=25 && tuIMC<=26.9){resultadoIMC = " tiene Sobrepeso Grado I: 25-26.9 (valores normales: 18,5-24.9)";}
+	else if(tuIMC>=27 && tuIMC<=29.9){resultadoIMC = " tiene Sobrepeso Grado II: 27-29.9 (valores normales: 18,5-24.9)";}
+	else if(tuIMC>=30 && tuIMC<=34.6){resultadoIMC = " tiene Obesidad Tipo I: 30-34.6 (valores normales: 18,5-24.9)";}
+	else if(tuIMC>=35 && tuIMC<=39.9){resultadoIMC = " tiene Obesidad Tipo II: 35-39.9 (valores normales: 18,5-24.9)";}
+	else if(tuIMC>40){resultadoIMC = "tiene Obesidad Tipo III(mórbida): +40 (valores normales: 18,5-24.9)";}
+	//si el resultado no es un número avisa del error
+	else {alert("No has puesto la altura en METROS! Acuerdate de separar las decimales con un PUNTO no con una coma.")}
+	
+	//Informa del resultado, nos lo da en 2 decimales -> toFixed(2)
+	alert("El IMC del individuo es "+tuIMC.toFixed(2)+ resultadoIMC);
+	}
+	
+//#####################################----FIN FUNCION IMC----#####################################################
+//#################################################################################################################	
+
+
+
+//#################################################################################################################	
+//#####################################----FUNCION ICC----#########################################################
+
+var icc = function(){
+
+//----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
+
+	var pCintura = prompt("¿Perímetro de cintura (cm)?");
+	var pCadera = prompt("¿Perímetro de cadera (cm)?");
+
+//----------------------------CALCULO DE LA FORMULA----------------------------------------
+
+	var tuICC = pCintura / pCadera;
+	
+	//Informa del resultado, nos lo da en 2 decimales -> toFixed(2)
+	alert("El ICC del individuo es "+tuICC.toFixed(2)+" en hombres debe ser menor a 1 y en mujeres menor a 0.85");
+	}
+	
+//#####################################----FIN FUNCION ICC----#####################################################
+//#################################################################################################################	
+
+
+
+//#################################################################################################################	
+//#####################################----FUNCION ICT----#########################################################
+
+var ict = function(){
+
+//----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
+
+	var pCintura = prompt("¿Perímetro de cintura (cm)?");
+	var altura = prompt("¿Altura (cm)?");
+	var tuICT = pCintura / altura;
+
+//----------------------------CALCULO DE LA FORMULA----------------------------------------
+	
+	//Informa del resultado, nos lo da en 2 decimales -> toFixed(2)
+	alert("El ICT del individuo es "+tuICT.toFixed(2)+" debe ser menor a 0.5");
+	}
+	
+//#####################################----FIN FUNCION ICC----#####################################################
+//#################################################################################################################	
+
+</script>
+
+<p>
+<a href="#" onClick="metabolismo()">Metabolismo</a>
+</p>
+<p>
+<a href="#" onClick="pesoIdeal()">Peso ideal</a>
+</p>
+<p>
+<a href="#" onClick="imc()">IMC</a>
+</p>
+<p>
+<a href="#" onClick="icc()">ICC</a>
+</p>
+<p>
+<a href="#" onClick="ict()">ICT</a>
+</p>
+
+</body>
+</html>
