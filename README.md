@@ -9,6 +9,8 @@ Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
 + Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías.
++ El indice de actividad 1.2 enfermedad 1.6 etc
++ La complexion perimetro de la muñeca
 
 Versión 0.9.1 (Beta)
 -----------------------------------
@@ -16,7 +18,7 @@ Versión 0.9.1 (Beta)
 + (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 + (En desarrollo) Cálculo del Índice Cintura Altura (ICT)
 + (En desarrollo) Cálculo de compartimentos corporales mediante pliegues
-+ (En desarrollo) Añadir Termic Effect of Food (TEF) Del 5 al 10%
++ Añadir Termic Effect of Food (TEF) Del 5 al 10%
 
 Versión 0.9 (Estable)
 -----------------------------------
