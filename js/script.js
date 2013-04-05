@@ -69,8 +69,9 @@ function calcularMB() {
         if (actividadFisica === "moderada") {deporte = actModerada;}
         if (actividadFisica === "intensa") {deporte = actIntensa;}
 
-        // Multiplicamos el metabolismo basal por el deporte que haga
-        var mt = mb*deporte;
+        var tef = (Number(document.mbForm.tef.value))/100 + 1;
+        // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef
+        var mt = mb*deporte*tef;
         var mtInfo = Math.floor(mt)+' Kcal';
         //Muestra el resultado del METABOLISMO TOTAL
         if( altura===0 || edad===0 || peso===0 ){
