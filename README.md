@@ -8,6 +8,7 @@ Se está usando el framework jQuery Mobile.
 Versión 0.9.1 (En desarrollo)
 -----------------------------------
 [ ] Añadida calculadora del Metabolismo Basal
+
 [] Añadida calculadora del Metabolismo Total
 [] Añadida calculadora del Índice de Masa Corporal (IMC)
 [] Añadida calculadora del Peso Ideal
