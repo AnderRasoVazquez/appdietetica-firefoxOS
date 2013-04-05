@@ -15,6 +15,7 @@ Versión 0.9.1 (Beta)
 + (En desarrollo) Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
 + (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 + (En desarrollo) Cálculo del Índice Cintura Altura (ICT)
++ (En desarrollo) Cálculo de compartimentos corporales mediante pliegues
 
 Versión 0.9 (Estable)
 -----------------------------------
