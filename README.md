@@ -1,9 +1,9 @@
 Calculadora de fórmulas corporales
 =======================
 
-Este proyecto tienen la intención de crear una calculadora de fórmulas corporales a partir de Javacript, HTML y CSS.
+Este proyecto tienen la finalidad de crear una calculadora de fórmulas corporales a partir de Javacript, HTML y CSS. Se está usando el framework jQuery Mobile.
 
-Se está usando el framework jQuery Mobile.
+Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener el código fuente, modificarlo y redistribuirlo libremente.
 
 
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
