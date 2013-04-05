@@ -3,7 +3,7 @@
 
 function calcularMB() {
 
-    //----------PREGUNTAMOS POR EL SEXO PRIMERO YA QUE LOS SIGUIENTES DATOS DEPENDERÁN DEL SEXO-----------------
+    //----------PREGUNTAMOS POR EL SEXO PRIMERO YA QUE LOS SIGUIENTES DATOS DEPENDERÁN DE ELLO-----------------
 
     var sexo = document.mbForm.sexo.value; //Number() convertirá el valor a un número
 
@@ -35,9 +35,9 @@ function calcularMB() {
         d = 4.6756;
     }
 
-// DATOS PARA METABOLISMO TOTAL
+//------------------ DATOS PARA METABOLISMO TOTAL ----------------------------------
 
-/*
+/* INDICE DE ACTIVIDAD FÍSICA
    1 -    para una persona inactiva o totalmente sedentaria, 
    1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
    1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
@@ -50,23 +50,6 @@ function calcularMB() {
         var actIntensa = 1.6;
         var actExtrema = 1.8;
 
-
-//-------------------------------CALCULO DE DATOS-----------------------------------------
-
-//------ECUACION DEL METABOLISMO BASAL - calcula el resultado con los datos de arriba
-        var mb = a+(b*peso)+(c*altura)-(d*edad);
-        // Estas 2 variables indicarán el resultado
-        var mbInfo = Math.floor(mb)+' Kcal';
-        var errorFaltaDato = 'Te faltan campos por rellenar.';
-        // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
-        if( altura===0 || edad===0 || peso===0 ){
-            document.mbForm.resultado.value = errorFaltaDato;
-        } else {
-            document.mbForm.resultado.value = mbInfo;
-        }
-
-//----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad
-
         var actividadFisica = document.mbForm.actividad.value;
         var deporte;
         if (actividadFisica === "nula") {deporte = actNula;}
@@ -75,15 +58,64 @@ function calcularMB() {
         if (actividadFisica === "intensa") {deporte = actIntensa;}
         if (actividadFisica === "extrema") {deporte = actExtrema;}
 
+/* INDICE DE ENFERMEDAD
+-   Enfermedad leve:      aumentan un 10%
+-   Enfermedad moderada   25%
+-   Enfermedad grave      50%
+-   Neumonía              20%
+-   Politraumatizado      30%
+-   Sepsis                50%
+-   Quemaduras            80%
+*/
+        var enfNula = 1;
+        var enfLeve = 1.1;
+        var enfModerada = 1.25;
+        var enfGrave = 1.5;
+        var enfNeumonia = 1.2;
+        var enfPolitraumatizado = 1.3;
+        var enfSepsis = 1.5;
+        var enfQuemaduras = 1.8;
 
-        var tef = (Number(document.mbForm.tef.value))/100 + 1;
+        var enf = document.mbForm.enfermedad.value;
+        var indEnf;
+        if (enf === "nula") {indEnf = enfNula;}
+        if (enf === "leve") {indEnf = enfLeve;}
+        if (enf === "moderada") {indEnf = enfModerada;}
+        if (enf === "grave") {indEnf = enfGrave;}
+        if (enf === "neumonia") {indEnf = enfNeumonia;}
+        if (enf === "politraumatizado") {indEnf = enfPolitraumatizado;}
+        if (enf === "sepsis") {indEnf = enfSepsis;}
+        if (enf === "quemaduras") {indEnf = enfQuemaduras;}
+
+/* EFECTO TÉRMICO DE LOS ALIMENTOS
+Es la energía que invierte el organismo en digerir, metabolizar y transportar los nutrientes de la dieta. 
+Se establece un 10% de incremento sobre el valor hallado anteriormente.
+ */
+        var tef = (Number(document.mbForm.tef.value))/100 + 1; //Convertimos el número para multiplicar Ejemplo: 5 --> 1,05
+
+//-------------------------------CALCULO DE DATOS-----------------------------------------
+
+        //En caso de que falte algún dato
+        var errorFaltaDato = 'Te faltan campos por rellenar.';
+
+//------ECUACION DEL METABOLISMO BASAL - calcula el resultado con los datos de arriba
+
+        var mb = a+(b*peso)+(c*altura)-(d*edad);
+        // Estas 2 variables indicarán el resultado
+        var mbInfo = Math.floor(mb)+' Kcal';
+
+
+//----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad y por enfermedad
+
+
         // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef
-        var mt = mb*deporte*tef;
+        var mt = mb*deporte*indEnf*tef;
         var mtInfo = Math.floor(mt)+' Kcal';
         //Muestra el resultado del METABOLISMO TOTAL
         if( altura===0 || edad===0 || peso===0 ){
-            document.mbForm.resultadoTotal.value = errorFaltaDato;
+            alert(errorFaltaDato);
         } else {
+            document.mbForm.resultado.value = mbInfo;
             document.mbForm.resultadoTotal.value = mtInfo;
         }
 
