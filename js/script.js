@@ -47,6 +47,21 @@ function calcularMB() {
         actIntensa = 1.90;
     }
 
+
+
+/*
+•   1 -    para una persona inactiva o totalmente sedentaria, 
+•   1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
+•   1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
+•   1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana), 
+•   1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
+*/
+
+
+
+
+
+
 //-------------------------------CALCULO DE DATOS-----------------------------------------
 
 //------ECUACION DEL METABOLISMO BASAL - calcula el resultado con los datos de arriba

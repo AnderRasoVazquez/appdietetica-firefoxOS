@@ -60,15 +60,15 @@
                         <fieldset data-role="collapsible" data-theme="a" data-content-theme="d">
                         <legend>Calcular Metabolismo Total</legend>
                         <!-- Opciones actividad -->
-                            <label for="actividad">Nivel de actividad física</label>
+                            <label for="actividad">Índice de actividad</label>
                             <select name="actividad" id="actividad">
                                 <option value="ligera">Actividad Ligera</option>
                                 <option value="moderada">Actividad Moderada</option>
                                 <option value="intensa">Actividad Intensa</option>
                             </select>
                         <!-- Efecto térmico de los alimentos -->
-                            <label for="tef">Efecto térmico de los alimentos (%)</label>
-                            <input type="range" name="tef" id="tef" value="7" min="5" max="10" data-theme="a" data-track-theme="b" />
+                            <label for="tef">Acción dinámica de los alimentos (%)</label>
+                            <input type="range" name="tef" id="tef" value="10" min="5" max="10" data-theme="a" data-track-theme="b" />
                         <!-- Resultado Total -->
                             <label for="resultadoTotal">Resultado Total<a href="#popupCloseRight2" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
                             <input type="text" name="resultadoTotal" id="resultadoTotal" value="" />
@@ -109,6 +109,13 @@
                     <p>Como claro ejemplo del metabolismo basal está el caso del coma. La persona «en coma», está inactiva, pero tiene un gasto mínimo de calorías, razón por la que hay que seguir alimentando al organismo.</p>
 
                     <p> A ese cálculo hay que añadir las actividades extras que se pueden hacer cada día (metabolismo total). Una persona sana no ingerirá nunca menos de 1500 Kcal.</p>
+                    <ul>
+                        <li>1 -   para una persona inactiva o totalmente sedentaria</li>
+                        <li>1,2 - para una persona que realiza una actividad física ligera (andar un poco)</li>
+                        <li>1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas)</li>
+                        <li>1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana)</li>
+                        <li>1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)</li>
+                    </ul>
                 </div> 
             </div>
             <!-- /panel -->
