@@ -9,8 +9,9 @@ Versión 0.9.1 (En desarrollo)
 -----------------------------------
 [ ] Añadida calculadora del Metabolismo Basal
 
-[] Añadida calculadora del Metabolismo Total
-[] Añadida calculadora del Índice de Masa Corporal (IMC)
+[x] Añadida calculadora del Metabolismo Total
+
+[X] Añadida calculadora del Índice de Masa Corporal (IMC)
 [] Añadida calculadora del Peso Ideal
 [] Añadida calculadora del Índice Cintura Cadera (ICC)
 
