@@ -12,11 +12,11 @@ function calcularMB() {
     var edad = Number(document.mbForm.edad.value);
     var altura = Number(document.mbForm.altura.value);
     var peso = Number(document.mbForm.peso.value);
-    // Definimos todas las variables cuyos valores cambiarán dependiendo del sexo
-    var a, b, c, d, actLigera, actModerada, actIntensa;
+
 
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
-
+// Definimos todas las variables cuyos valores cambiarán dependiendo del sexo
+    var a, b, c, d;
     // DATOS PARA METABOLISMO BASAL - HOMBRE
     // MB hombres = a + (b * peso) + (c * altura) – (d * edad)
     if(sexo === "Hombre" ){
@@ -24,12 +24,6 @@ function calcularMB() {
         b = 13.7516;
         c = 5.0033;
         d = 6.7550;
-
-    // DATOS PARA METABOLISMO TOTAL - HOMBRE
-        //Hombres -> MB x 1.60 = Actividad ligera, MB x 1.78 = Actividad moderada, MB x 2.10 = Actividad intensa
-        actLigera = 1.60;
-        actModerada = 1.78;
-        actIntensa = 2.10;
     }
 
     // DATOS PARA METABOLISMO BASAL - MUJER
@@ -39,27 +33,22 @@ function calcularMB() {
         b = 9.5634;
         c = 1.8496;
         d = 4.6756;
-
-    // DATOS PARA METABOLISMO TOTAL - MUJER
-        //Mujeres -> MB x 1.50 = Actividad ligera , MB x 1.64 = Actividad moderada , MB x 1.90 = Actividad intensa
-        actLigera = 1.50;
-        actModerada = 1.64;
-        actIntensa = 1.90;
     }
 
-
+// DATOS PARA METABOLISMO TOTAL
 
 /*
-•   1 -    para una persona inactiva o totalmente sedentaria, 
-•   1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
-•   1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
-•   1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana), 
-•   1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
+   1 -    para una persona inactiva o totalmente sedentaria, 
+   1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
+   1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
+   1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana), 
+   1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
 */
-
-
-
-
+        var actNula = 1;
+        var actLigera = 1.2;
+        var actModerada = 1.4;
+        var actIntensa = 1.6;
+        var actExtrema = 1.8;
 
 
 //-------------------------------CALCULO DE DATOS-----------------------------------------
@@ -80,9 +69,12 @@ function calcularMB() {
 
         var actividadFisica = document.mbForm.actividad.value;
         var deporte;
+        if (actividadFisica === "nula") {deporte = actNula;}
         if (actividadFisica === "ligera") {deporte = actLigera;}
         if (actividadFisica === "moderada") {deporte = actModerada;}
         if (actividadFisica === "intensa") {deporte = actIntensa;}
+        if (actividadFisica === "extrema") {deporte = actExtrema;}
+
 
         var tef = (Number(document.mbForm.tef.value))/100 + 1;
         // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef

@@ -9,7 +9,7 @@ Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
 + Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías
-+ El indice de actividad 1.2 enfermedad 1.6 etc
++ Índice enfermedad 1.6 etc
 + La complexion perimetro de la muñeca
 + 1.7.	Frecuencia cardiaca máxima (FCmáx)
 + Prediccion de la talla final del adolescente
@@ -22,6 +22,7 @@ Versión 0.9.1 (Beta)
 + (En desarrollo) Cálculo del Índice Cintura Altura (ICT)
 + (En desarrollo) Cálculo de compartimentos corporales mediante pliegues
 + Añadir Termic Effect of Food (TEF) Del 5 al 10%
++ Más índices de actividad añadidos en el metabolismo total
 
 Versión 0.9 (Estable)
 -----------------------------------
