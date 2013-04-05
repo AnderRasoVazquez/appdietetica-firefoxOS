@@ -101,6 +101,21 @@ Se establece un 10% de incremento sobre el valor hallado anteriormente.
 //------ECUACION DEL METABOLISMO BASAL - calcula el resultado con los datos de arriba
 
         var mb = a+(b*peso)+(c*altura)-(d*edad);
+
+        // CASOS ESPECIALES
+
+        /* Tercera edad
+        Reducción de 200 Kcal desde los 50 años  hasta los 75 años
+        Reducción de 500 Kcal  en hombres mayores de 75 años 
+        Reducción de 400 Kcal en mujeres mayores de 75 años
+        */
+
+        if(edad >= 50 & edad < 75) { mb-=200;}
+        if (edad >= 75) {
+            if(sexo === "Hombre") { mb-=500;}
+            if(sexo === "Mujer") { mb-=400;}
+        }
+
         // Estas 2 variables indicarán el resultado
         var mbInfo = Math.floor(mb)+' Kcal';
 
@@ -111,6 +126,7 @@ Se establece un 10% de incremento sobre el valor hallado anteriormente.
         // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef
         var mt = mb*deporte*indEnf*tef;
         var mtInfo = Math.floor(mt)+' Kcal';
+
         //Muestra el resultado del METABOLISMO TOTAL
         if( altura===0 || edad===0 || peso===0 ){
             alert(errorFaltaDato);
