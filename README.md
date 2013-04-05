@@ -5,20 +5,21 @@ Este proyecto tienen la intención de crear una calculadora de fórmulas corpora
 
 Se está usando el framework jQuery Mobile.
 
-Versión 0.9.1 (En desarrollo)
+
+Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
-[ ] Añadida calculadora del Metabolismo Basal
++ Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías.
 
-[x] Añadida calculadora del Metabolismo Total
-
-[X] Añadida calculadora del Índice de Masa Corporal (IMC)
-[] Añadida calculadora del Peso Ideal
-[] Añadida calculadora del Índice Cintura Cadera (ICC)
+Versión 0.9.1 (Beta)
+-----------------------------------
++ (En desarrollo) Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
++ (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 
 Versión 0.9 (Estable)
 -----------------------------------
 + Añadida calculadora del Metabolismo Basal
 + Añadida calculadora del Metabolismo Total (de momento funciona con índices de actividad ligera, moderada o intensa)
-+ Añadida calculadora del Índice de Masa Corporal (IMC)
-+ Añadida calculadora del Peso Ideal
++ Añadida calculadora del Índice de Masa Corporal (IMC)(además indica el estado [normopeso, sobrepeso, obesidad...])
++ Añadida calculadora del Peso Ideal 
 + Añadida calculadora del Índice Cintura Cadera (ICC)
++ Añadido el botón info (da información de cada fórmula)
