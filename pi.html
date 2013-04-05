@@ -29,22 +29,30 @@
                 <!-- Formulario para calcular el metabolismo basal -->
                 <form name="piForm" class="calcForm">
                 <!-- Sexo -->
+                <div data-role="fieldcontain">
                     <label for="sexo">Sexo</label>
                     <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
                         <option value="Mujer">M</option>
                         <option value="Hombre" selected>H</option>
                     </select>
+                </div>
                 <!-- Altura -->
+                <div data-role="fieldcontain">
                     <label for="altura">Altura (cm)</label>
                     <input type="text" name="altura" id="altura" value="" />
+                </div>
                 <!-- Edad -->
+                <div data-role="fieldcontain">
                     <label for="edad">Edad</label>
                     <input type="range" name="edad" id="edad" value="25" min="0" max="120" data-theme="a" data-track-theme="b" />
+                </div>
                 <!-- Resultado -->
+                <div data-role="fieldcontain">
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                    <input type="text" name="resultado" id="resultado" value="" />
+                    <input type="text" name="resultado" id="resultado" value="" readonly/>
+                </div>
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
+                    <a href="#" data-role="button" data-icon="gear" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
                 </form>
             </article><!-- /content -->
 

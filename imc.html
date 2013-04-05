@@ -29,16 +29,22 @@
                 <!-- Formulario para calcular el metabolismo basal -->
                 <form name="imcForm" >
                 <!-- Altura -->
+                <div data-role="fieldcontain">
                     <label for="peso">Peso (Kg)</label>
                     <input type="text" name="peso" id="peso" value="" />
+                </div>
                 <!-- Peso -->
+                <div data-role="fieldcontain">
                     <label for="altura">Altura (m)</label>
                     <input type="text" name="altura" id="altura" value="" />
+                </div>
                 <!-- Resultado -->
+                <div data-role="fieldcontain">
                     <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                    <input type="text" name="resultado" id="resultado" value="" />
+                    <input type="text" name="resultado" id="resultado" value="" readonly/>
+                </div>
                 <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularIMC()" data-theme="e">Calcular Índice de Masa Corporal</a>
+                    <a href="#" data-role="button" data-icon="gear" onclick="calcularIMC()" data-theme="e">Calcular Índice de Masa Corporal</a>
                 </form>
             </article><!-- /content -->
 

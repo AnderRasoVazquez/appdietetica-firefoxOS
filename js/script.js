@@ -6,7 +6,11 @@ function calcularMB() {
     //----------PREGUNTAMOS POR EL SEXO PRIMERO YA QUE LOS SIGUIENTES DATOS DEPENDERÁN DE ELLO-----------------
 
     var sexo = document.mbForm.sexo.value; //Number() convertirá el valor a un número
-
+    // $(document).ready(function($) {
+    //     if (sexo==="Mujer") {
+    //         $('#sexoOpcion').append('<label for="sexoOpcion" >SexoOpcion</label><select name="sexoOpcion" id="sexoOpcion"><option value="#">Normal</option><option value="#">Embarazada 1 Trimestre</option><option value="#">Embarazo 2-3 Trimestre</option><option value="#">Lactante</option></select>');
+    //     }
+    // });
 //--------------DATOS A RECOGER QUE NO DEPENDEN DEL SEXO--------------------------------
 
     var edad = Number(document.mbForm.edad.value);
@@ -271,3 +275,4 @@ function calcularIMC() {
 }
 //#####################################----FIN FUNCION IMC----#####################################################
 //#################################################################################################################
+
