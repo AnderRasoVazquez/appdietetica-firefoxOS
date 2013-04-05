@@ -16,6 +16,7 @@ Versión 0.9.1 (Beta)
 + (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 + (En desarrollo) Cálculo del Índice Cintura Altura (ICT)
 + (En desarrollo) Cálculo de compartimentos corporales mediante pliegues
++ (En desarrollo) Añadir Termic Effect of Food (TEF) Del 5 al 10%
 
 Versión 0.9 (Estable)
 -----------------------------------
