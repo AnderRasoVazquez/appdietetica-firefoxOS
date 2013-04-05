@@ -13,7 +13,6 @@
     </head>
 
     <body>
-
     
         <!-- ###############   PAGINA 2 - MB   ############### -->
         <section id="page2" data-role="page" data-theme="b">
@@ -26,31 +25,61 @@
 
             <!-- Contenido Pagina 2 -->
             <article data-role="content" >
-                <!-- Formulario para calcular el metabolismo basal -->
+                <!-- Formulario para calcular el metabolismo -->
                 <form name="mbForm" class="calcForm">
-                <!-- Sexo -->
-                    <label for="sexo">Sexo</label>
-                    <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
-                        <option value="Mujer">M</option>
-                        <option value="Hombre" selected>H</option>
-                    </select>
-                <!-- Altura -->
-                    <label for="altura">Altura (cm)</label>
-                    <input type="text" name="altura" id="altura" value="" />
-                <!-- Edad -->
-                    <label for="edad">Edad</label>
-                    <input type="range" name="edad" id="edad" value="25" min="0" max="120" data-theme="a" data-track-theme="b" />
-                <!-- Peso -->
-                    <label for="peso">Peso (Kg)</label>
-                    <input type="text" name="peso" id="peso" value="" />
-                <!-- Resultado -->
-                    <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                    <input type="text" name="resultado" id="resultado" value="" />
-                <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Basal</a>
-                </form>
-            </article><!-- /content -->
+                    <!-- Div para indicar que hay elementos colapsables -->
+                    <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true">
 
+                    <!-- Colapsable 1 -->
+                        <fieldset data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="d" data-mini="true">
+                        <legend>Calcular Metabolismo Basal</legend>
+                        <!-- Sexo -->
+                            <label for="sexo">Sexo</label>
+                            <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
+                                <option value="Mujer">M</option>
+                                <option value="Hombre" selected>H</option>
+                            </select>
+                        <!-- Altura -->
+                            <label for="altura">Altura (cm)</label>
+                            <input type="text" name="altura" id="altura" value="" />
+                        <!-- Edad -->
+                            <label for="edad">Edad</label>
+                            <input type="range" name="edad" id="edad" value="25" min="0" max="120" data-theme="a" data-track-theme="b" />
+                        <!-- Peso -->
+                            <label for="peso">Peso (Kg)</label>
+                            <input type="text" name="peso" id="peso" value="" />
+                        <!-- Resultado Basal -->
+                            <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+                            <input type="text" name="resultado" id="resultado" value="" />
+                        <!-- Botón Calcular Basal -->
+                            <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Basal</a>
+                        </fieldset>
+                    <!-- /colapsable 1 -->
+
+                    <!-- Colapsable 2 -->
+                        <fieldset data-role="collapsible" data-theme="a" data-content-theme="d">
+                        <legend>Calcular Metabolismo Total</legend>
+                        <!-- Opciones actividad -->
+                            <label for="actividad">Nivel de actividad física</label>
+                            <select name="actividad" id="actividad">
+                                <option value="ligera">Actividad Ligera</option>
+                                <option value="moderada">Actividad Moderada</option>
+                                <option value="intensa">Actividad Intensa</option>
+                            </select>
+                        <!-- Resultado Total -->
+                            <label for="resultadoTotal">Resultado Total<a href="#popupCloseRight2" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+                            <input type="text" name="resultadoTotal" id="resultadoTotal" value="" />
+                        <!-- Botón Calcular Total -->
+                            <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Total</a>
+                        </fieldset>
+                    <!-- /colapsable 2 -->
+
+
+                    </div>
+                </form>
+            </article><!-- /contenido pagina 1 -->
+
+            <!-- Pie de página -->
             <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
                 <nav data-role="navbar" >
                     <ul>
@@ -81,16 +110,23 @@
             </div>
             <!-- /panel -->
 
-            <!-- ###############   POPUP   ############### -->
+            <!-- ###############   POPUP2   ############### -->
             <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px" data-theme="a">
                 <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <p>Es importante que el separador decimal sea el punto (.) y no la coma (,) .</p>
 
             </div>
             <!-- /popup -->
-            
-        </section><!-- /page -->
 
+            <!-- ###############   POPUP2   ############### -->
+            <div data-role="popup" id="popupCloseRight2" class="ui-content" style="max-width:280px" data-theme="a">
+                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>Ten en cuenta que este método es orientativo, no es 100% exacto.</p>
+
+            </div>
+            <!-- /popup -->
+  
+        </section><!-- /page -->
 
     </body>
 

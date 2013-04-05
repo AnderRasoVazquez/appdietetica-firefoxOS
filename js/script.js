@@ -61,20 +61,23 @@ function calcularMB() {
             document.mbForm.resultado.value = mbInfo;
         }
 
-        //!!!Muestra el resultado en una caja "confirm", si aceptamos calculara el METABOLISMO TOTAL, aceptamos?!!!!!!!!
-
-        //Si aceptamos la variable "calcularTotal" es -> true, por lo tanto:
-        /*if(calcularTotal){
-            //Prompt para insertar el tipo de actividad que realiza, es necesario para calcular el METABOLISMO TOTAL...
-            //el valor de las variables actLigera, actMOderada y actIntensa...se han definido arriba dependiendo del sexo
-            var actividadFisica = Number(document.tempForm.temp.value);
-
 //----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad
-            var mt = mb*actividadFisica;
 
-            //Muestra con una alerta el METABOLISMO TOTAL ( la variable "e" dice: esta mujer || este hombre )
-            alert("El metabolismo total de "+e+" es de "+Math.floor(mt)+" calorías. Más el 10% de calorías gastadas en la digestión "+Math.floor(mt*1.10)+".");
-            }*/
+        var actividadFisica = document.mbForm.actividad.value;
+        var deporte;
+        if (actividadFisica === "ligera") {deporte = actLigera;}
+        if (actividadFisica === "moderada") {deporte = actModerada;}
+        if (actividadFisica === "intensa") {deporte = actIntensa;}
+
+        // Multiplicamos el metabolismo basal por el deporte que haga
+        var mt = mb*deporte;
+        var mtInfo = Math.floor(mt)+' Kcal';
+        //Muestra el resultado del METABOLISMO TOTAL
+        if( altura===0 || edad===0 || peso===0 ){
+            document.mbForm.resultadoTotal.value = errorFaltaDato;
+        } else {
+            document.mbForm.resultadoTotal.value = mtInfo;
+        }
 
 
     } // Cierra LA FUNCIÓN calcularMB()
