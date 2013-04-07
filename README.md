@@ -16,7 +16,7 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 0.9.1 (Estable)
+Versión 0.9.1 (Beta)
 -----------------------------------
 Cambios en el metabolismo:
 + Añadido Efecto Térmico de los Alimentos
@@ -24,6 +24,7 @@ Cambios en el metabolismo:
 + Índices de enfermedad añadidos para el metabolismo total
 + Ahora se tiene en cuenta la tercera edad para metabolismo (si es hombre o mujer mayor de 50 o de 75)
 + Ahora se tiene en cuenta el embarazo y la lactancia
+Cambios en el peso ideal:
 + (En desarrollo) Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
 + (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 
