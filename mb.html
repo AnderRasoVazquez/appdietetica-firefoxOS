@@ -35,21 +35,24 @@
                         <legend>Calcular Metabolismo Basal</legend>
                         <!-- Sexo -->
                         <div data-role="fieldcontain">
-                        <div data-role="controlgroup" data-type="horizontal">
-                            <legend>Sexo:</legend>
-                            <label for="sexo">Sexo</label>
-                            <select name="sexo" id="sexo">
-                                <option value="Hombre">Hombre</option>
-                                <option value="Mujer">Mujer</option>
-                            </select>
-                            <label for="sexoOpcion" >SexoOpcion</label>
-                            <select name="sexoOpcion" id="sexoOpcion">
-                                <option value="#">Normal</option>
-                                <option value="#">Embarazada 1 Trimestre</option>
-                                <option value="#">Embarazo 2-3 Trimestre</option>
-                                <option value="#">Lactante</option>
-                            </select>
-                        </div>
+                            <div data-role="controlgroup" data-type="horizontal">
+                                <legend>Sexo:</legend>
+                                <label for="sexo">Sexo</label>
+                                <select name="sexo" id="sexo">
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                </select>
+                                <label for="estado" >Estado</label>
+                                <select name="estado" id="estado">
+                                    <optgroup label="Opción por defecto">
+                                        <option value="normal">Normal</option>
+                                    <optgroup label="Más opciones para Mujer">
+                                        <option value="embarazoUno">Embarazo 1 Trimestre</option>
+                                        <option value="embarazoDos">Embarazo 2-3 Trimestre</option>
+                                        <option value="lactante">Lactante</option>
+                                    </optgroup>
+                                </select>
+                            </div>
                         </div>
                         <!-- Altura -->
                         <div data-role="fieldcontain">
