@@ -5,20 +5,38 @@ function calcularMB() {
 
     //----------PREGUNTAMOS POR EL SEXO PRIMERO YA QUE LOS SIGUIENTES DATOS DEPENDERÁN DE ELLO-----------------
 
-    var sexo = document.mbForm.sexo.value; //Number() convertirá el valor a un número
-    // $(document).ready(function($) {
-    //     if (sexo==="Mujer") {
-    //         $('#sexoOpcion').append('<label for="sexoOpcion" >SexoOpcion</label><select name="sexoOpcion" id="sexoOpcion"><option value="#">Normal</option><option value="#">Embarazada 1 Trimestre</option><option value="#">Embarazo 2-3 Trimestre</option><option value="#">Lactante</option></select>');
-    //     }
-    // });
+    var sexo = document.mbForm.sexo.value; //
+
+
 //--------------DATOS A RECOGER QUE NO DEPENDEN DEL SEXO--------------------------------
 
+    // Number() convertirá el valor a un número
     var edad = Number(document.mbForm.edad.value);
     var altura = Number(document.mbForm.altura.value);
     var peso = Number(document.mbForm.peso.value);
 
 
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
+
+    /*
+        -Embarazo-
+        Las recomendaciones de la OMS son:  +150 Kcal. / día el primer trimestre
+                                            +350 Kcal. / día el resto del embarazo
+        -Mujer lactante-
+        El incremento adicional por produccion de leche esta calculado en +750 Kcal/día
+    */
+    var queEstado = document.mbForm.estado.value;
+    var estado;
+    // Sumaremos calorías dependiendo del estado 
+    // (más adelante marcaremos que no se sumará si es hombre)
+    if(queEstado === "normal") {estado = 0;}
+    if(queEstado === "embarazoUno" ) {estado = 150;}
+    if(queEstado === "embarazoDos") {estado = 350;}
+    if(queEstado === "lactante") {estado = 750;}
+
+
+//------------------ DATOS PARA METABOLISMO BASAL ----------------------------------
+
 // Definimos todas las variables cuyos valores cambiarán dependiendo del sexo
     var a, b, c, d;
     // DATOS PARA METABOLISMO BASAL - HOMBRE
@@ -41,19 +59,22 @@ function calcularMB() {
 
 //------------------ DATOS PARA METABOLISMO TOTAL ----------------------------------
 
-/* INDICE DE ACTIVIDAD FÍSICA
-   1 -    para una persona inactiva o totalmente sedentaria, 
-   1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
-   1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
-   1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana), 
-   1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
+/* 
+    INDICE DE ACTIVIDAD FÍSICA
+    1 -    para una persona inactiva o totalmente sedentaria, 
+    1,2 - para una persona que realiza una actividad física ligera (andar un poco), 
+    1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas), 
+    1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana), 
+    1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
 */
+    // Definimos los valores que tiene cada nivel de actividad
         var actNula = 1;
         var actLigera = 1.2;
         var actModerada = 1.4;
         var actIntensa = 1.6;
         var actExtrema = 1.8;
 
+    // Miramos cual es la opción escogida y le asignamos el valor correspondiente
         var actividadFisica = document.mbForm.actividad.value;
         var deporte;
         if (actividadFisica === "nula") {deporte = actNula;}
@@ -62,7 +83,8 @@ function calcularMB() {
         if (actividadFisica === "intensa") {deporte = actIntensa;}
         if (actividadFisica === "extrema") {deporte = actExtrema;}
 
-/* INDICE DE ENFERMEDAD
+/* 
+    INDICE DE ENFERMEDAD
 -   Enfermedad leve:      aumentan un 10%
 -   Enfermedad moderada   25%
 -   Enfermedad grave      50%
@@ -71,6 +93,7 @@ function calcularMB() {
 -   Sepsis                50%
 -   Quemaduras            80%
 */
+    // Definimos los valores que tiene cada nivel de enfermedad
         var enfNula = 1;
         var enfLeve = 1.1;
         var enfModerada = 1.25;
@@ -80,6 +103,7 @@ function calcularMB() {
         var enfSepsis = 1.5;
         var enfQuemaduras = 1.8;
 
+    // Miramos cual es la opción escogida y le asignamos el valor correspondiente
         var enf = document.mbForm.enfermedad.value;
         var indEnf;
         if (enf === "nula") {indEnf = enfNula;}
@@ -91,9 +115,10 @@ function calcularMB() {
         if (enf === "sepsis") {indEnf = enfSepsis;}
         if (enf === "quemaduras") {indEnf = enfQuemaduras;}
 
-/* EFECTO TÉRMICO DE LOS ALIMENTOS
-Es la energía que invierte el organismo en digerir, metabolizar y transportar los nutrientes de la dieta. 
-Se establece un 10% de incremento sobre el valor hallado anteriormente.
+/* 
+    EFECTO TÉRMICO DE LOS ALIMENTOS (Termic Effect of Food)
+    Es la energía que invierte el organismo en digerir, metabolizar y transportar los nutrientes de la dieta. 
+    Se establece un 10% de incremento sobre el valor hallado anteriormente.
  */
         var tef = (Number(document.mbForm.tef.value))/100 + 1; //Convertimos el número para multiplicar Ejemplo: 5 --> 1,05
 
@@ -108,10 +133,11 @@ Se establece un 10% de incremento sobre el valor hallado anteriormente.
 
         // CASOS ESPECIALES
 
-        /* Tercera edad
-        Reducción de 200 Kcal desde los 50 años  hasta los 75 años
-        Reducción de 500 Kcal  en hombres mayores de 75 años 
-        Reducción de 400 Kcal en mujeres mayores de 75 años
+        /* 
+            Tercera edad
+            Reducción de 200 Kcal desde los 50 años  hasta los 75 años
+            Reducción de 500 Kcal  en hombres mayores de 75 años 
+            Reducción de 400 Kcal en mujeres mayores de 75 años
         */
 
         if(edad >= 50 & edad < 75) { mb-=200;}
@@ -120,8 +146,22 @@ Se establece un 10% de incremento sobre el valor hallado anteriormente.
             if(sexo === "Mujer") { mb-=400;}
         }
 
-        // Estas 2 variables indicarán el resultado
-        var mbInfo = Math.floor(mb)+' Kcal';
+        var mbInfo;
+        // Si es hombre no sumaremos al resultado la variable "estado" (embarazo o lactancia)
+        if(sexo==="Hombre") {
+            if(queEstado != "normal"){
+                alert("Esa opción es para mujer, no tendrá efecto en el hombre.");
+                mbInfo = Math.floor(mb)+' Kcal';
+            } else {
+                mbInfo = Math.floor(mb)+' Kcal';
+                }
+            }
+
+        if(sexo==="Mujer") {
+            mbInfo = (Math.floor(mb)+estado)+' Kcal';
+            // Es importante sumar en el resultado el estado y no en la variable mb 
+            // ya que nos influiría en el cálculo del metabolismo total
+        }
 
 
 //----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad y por enfermedad
@@ -129,12 +169,19 @@ Se establece un 10% de incremento sobre el valor hallado anteriormente.
 
         // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef
         var mt = mb*deporte*indEnf*tef;
-        var mtInfo = Math.floor(mt)+' Kcal';
 
-        //Muestra el resultado del METABOLISMO TOTAL
+        var mtInfo;
+        // Si es hombre no sumaremos al resultado del incremento por embarazo o lactancia
+        if(sexo==="Hombre") {mtInfo = Math.floor(mt)+' Kcal';}
+        if(sexo==="Mujer") {
+            mtInfo = (Math.floor(mt)+estado)+' Kcal';
+        }
+
+        // Si faltan datos por meter avisará con una alerta
         if( altura===0 || edad===0 || peso===0 ){
             alert(errorFaltaDato);
         } else {
+            // Muestra el resultado del METABOLISMO BASAL y del METABOLISMO TOTAL
             document.mbForm.resultado.value = mbInfo;
             document.mbForm.resultadoTotal.value = mtInfo;
         }
