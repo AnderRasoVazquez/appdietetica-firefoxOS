@@ -26,8 +26,8 @@ Cambios en el metabolismo:
 + Ahora se tiene en cuenta el embarazo y la lactancia
 
 Cambios en el peso ideal:
-+ (En desarrollo) Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
-+ (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
++ Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
++ Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 
 Versión 0.9 (Estable)
 -----------------------------------
