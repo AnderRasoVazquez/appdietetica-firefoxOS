@@ -16,7 +16,7 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 0.9.1 (Beta)
+Versión 0.9.1 (Estable)
 -----------------------------------
 Cambios en el metabolismo:
 + Añadido Efecto Térmico de los Alimentos
