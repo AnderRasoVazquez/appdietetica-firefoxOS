@@ -28,52 +28,97 @@
                 <!-- Formulario para calcular el metabolismo -->
                 <form name="mbForm" class="calcForm">
                     <!-- Div para indicar que hay elementos colapsables -->
-                    <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true">
-
+                    <!-- <div data-role="collapsible-set" data-theme="b" data-content-theme="b" data-mini="true"> -->
+                    <div data-role="collapsible-set" data-theme="b" data-content-theme="b" data-inset="false" data-mini="true">
                     <!-- Colapsable 1 -->
-                        <fieldset data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="d" data-mini="true">
+                        <fieldset data-role="collapsible" data-collapsed="false"  data-theme="a">
                         <legend>Calcular Metabolismo Basal</legend>
                         <!-- Sexo -->
-                            <label for="sexo">Sexo</label>
-                            <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
-                                <option value="Mujer">M</option>
-                                <option value="Hombre" selected>H</option>
-                            </select>
+                        <div data-role="fieldcontain">
+                            <div data-role="controlgroup" data-type="horizontal">
+                                <legend>Sexo:</legend>
+                                <label for="sexo">Sexo</label>
+                                <select name="sexo" id="sexo">
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                </select>
+                                <label for="estado" >Estado</label>
+                                <select name="estado" id="estado">
+                                    <optgroup label="Opción por defecto">
+                                        <option value="normal">Normal</option>
+                                    <optgroup label="Más opciones para Mujer">
+                                        <option value="embarazoUno">Embarazo 1 Trimestre</option>
+                                        <option value="embarazoDos">Embarazo 2-3 Trimestre</option>
+                                        <option value="lactante">Lactante</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
                         <!-- Altura -->
+                        <div data-role="fieldcontain">
                             <label for="altura">Altura (cm)</label>
-                            <input type="text" name="altura" id="altura" value="" />
+                            <input type="text" name="altura" id="altura" value="" placeholder="Altura en centímetros..."/>
+                        </div>
                         <!-- Edad -->
+                        <div data-role="fieldcontain">
                             <label for="edad">Edad</label>
                             <input type="range" name="edad" id="edad" value="25" min="0" max="120" data-theme="a" data-track-theme="b" />
+                        </div>
                         <!-- Peso -->
+                        <div data-role="fieldcontain">
                             <label for="peso">Peso (Kg)</label>
-                            <input type="text" name="peso" id="peso" value="" />
+                            <input type="text" name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
+                        </div>
                         <!-- Resultado Basal -->
+                        <div data-role="fieldcontain">
                             <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                            <input type="text" name="resultado" id="resultado" value="" />
+                            <input type="text" name="resultado" id="resultado" value="" readonly/>
+                        </div>
                         <!-- Botón Calcular Basal -->
-                            <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Basal</a>
+                            <a href="#" data-role="button" data-icon="gear" onclick="calcularMB()" data-theme="e">Calcular</a>
                         </fieldset>
                     <!-- /colapsable 1 -->
 
                     <!-- Colapsable 2 -->
-                        <fieldset data-role="collapsible" data-theme="a" data-content-theme="d">
+                        <fieldset data-role="collapsible" data-theme="a">
                         <legend>Calcular Metabolismo Total</legend>
                         <!-- Opciones actividad -->
-                            <label for="actividad">Nivel de actividad física</label>
+                        <div data-role="fieldcontain">
+                            <label for="actividad">Índice de actividad</label>
                             <select name="actividad" id="actividad">
+                                <option value="nula">Persona Sedentaria</option>
                                 <option value="ligera">Actividad Ligera</option>
                                 <option value="moderada">Actividad Moderada</option>
                                 <option value="intensa">Actividad Intensa</option>
+                                <option value="extrema">Actividad Extrema</option>
                             </select>
+                        </div>
+                        <!-- Opciones enfermedad -->
+                        <div data-role="fieldcontain">
+                            <label for="enfermedad">Índice de enfermedad</label>
+                            <select name="enfermedad" id="enfermedad">
+                                <option value="nula">Persona Sana</option>
+                                <option value="leve">Enfermedad Leve</option>
+                                <option value="moderada">Enfermedad Moderada</option>
+                                <option value="grave">Enfermedad Grave</option>
+                                <option value="neumonia">Neumonía</option>
+                                <option value="politraumatizado">Politraumatizado</option>
+                                <option value="sepsis">Sepsis</option>
+                                <option value="quemaduras">Quemaduras</option>
+                            </select>
+                        </div>
                         <!-- Efecto térmico de los alimentos -->
-                            <label for="tef">Efecto térmico de los alimentos (%)</label>
-                            <input type="range" name="tef" id="tef" value="7" min="5" max="10" data-theme="a" data-track-theme="b" />
+                        <div data-role="fieldcontain">
+                            <label for="tef">Acción dinámica de los alimentos (%)</label>
+                            <input type="range" name="tef" id="tef" value="10" min="5" max="10" data-theme="a" data-track-theme="b" />
+                        </div>
                         <!-- Resultado Total -->
+                        <div data-role="fieldcontain">
                             <label for="resultadoTotal">Resultado Total<a href="#popupCloseRight2" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                            <input type="text" name="resultadoTotal" id="resultadoTotal" value="" />
+                            <input type="text" name="resultadoTotal" id="resultadoTotal" value="" readonly/>
+                        </div>
                         <!-- Botón Calcular Total -->
-                            <a href="#" data-role="button" data-icon="check" data-iconpos="bottom" onclick="calcularMB()" data-theme="e">Calcular Metabolismo Total</a>
+                            <a href="#" data-role="button" data-icon="gear" onclick="calcularMB()" data-theme="e">Calcular</a>
                         </fieldset>
                     <!-- /colapsable 2 -->
 
@@ -97,7 +142,7 @@
             <!-- ###############   PANEL   ############### -->
             <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
                 <ul data-role="listview" data-theme="a" class="nav-search">
-                    <li data-icon="delete"><a href="#" data-rel="close">¿Metabolismo Basal?</a></li>
+                    <li data-icon="delete"><a href="#" data-rel="close">¿Metabolismo?</a></li>
                 </ul>
                 <div>
                     <p>El metabolismo basal es el valor mínimo de energía necesaria para que la célula subsista, es decir, lo que un cuerpo necesita diariamente para seguir funcionando.</p>
@@ -109,6 +154,13 @@
                     <p>Como claro ejemplo del metabolismo basal está el caso del coma. La persona «en coma», está inactiva, pero tiene un gasto mínimo de calorías, razón por la que hay que seguir alimentando al organismo.</p>
 
                     <p> A ese cálculo hay que añadir las actividades extras que se pueden hacer cada día (metabolismo total). Una persona sana no ingerirá nunca menos de 1500 Kcal.</p>
+                    <ul>
+                        <li>1 -   para una persona inactiva o totalmente sedentaria</li>
+                        <li>1,2 - para una persona que realiza una actividad física ligera (andar un poco)</li>
+                        <li>1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas)</li>
+                        <li>1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana)</li>
+                        <li>1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)</li>
+                    </ul>
                 </div> 
             </div>
             <!-- /panel -->

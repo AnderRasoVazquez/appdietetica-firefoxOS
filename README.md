@@ -8,17 +8,26 @@ Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener
 
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
-+ Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías.
-+ El indice de actividad 1.2 enfermedad 1.6 etc
-+ La complexion perimetro de la muñeca
++ Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías
++ La complexion por el perímetro de la muñeca
++ Frecuencia cardiaca máxima (FCmáx)
++ Prediccion de la talla final del adolescente
++ Metabolismo (niño lactante)
++ Cálculo del Índice Cintura Altura (ICT)
++ Cálculo de compartimentos corporales mediante pliegues
 
 Versión 0.9.1 (Beta)
 -----------------------------------
-+ (En desarrollo) Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
-+ (En desarrollo) Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
-+ (En desarrollo) Cálculo del Índice Cintura Altura (ICT)
-+ (En desarrollo) Cálculo de compartimentos corporales mediante pliegues
-+ Añadir Termic Effect of Food (TEF) Del 5 al 10%
+Cambios en el metabolismo:
++ Añadido Efecto Térmico de los Alimentos
++ Más índices de actividad añadidos en el metabolismo total
++ Índices de enfermedad añadidos para el metabolismo total
++ Ahora se tiene en cuenta la tercera edad para metabolismo (si es hombre o mujer mayor de 50 o de 75)
++ Ahora se tiene en cuenta el embarazo y la lactancia
+
+Cambios en el peso ideal:
++ Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
++ Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 
 Versión 0.9 (Estable)
 -----------------------------------
