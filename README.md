@@ -16,6 +16,14 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
+<<<<<<< HEAD
+=======
+Versión 0.9.2 (Beta)
+-----------------------------------
++ (En desarrollo) Calculadora Frecuencia Cardíaca
++ (En desarrollo) Calculadora Complexión Corporal
+
+>>>>>>> origin/0.9.2
 Versión 0.9.1 (Estable)
 -----------------------------------
 Cambios en el metabolismo:
