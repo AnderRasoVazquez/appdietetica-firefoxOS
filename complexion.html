@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora de complexión corporal</title>
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script src="js/jquery.mobile-1.3.0.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+    
+        <!-- ###############   PAGINA 2 - MB   ############### -->
+        <section id="page2" data-role="page" data-theme="b">
+            <!-- Header -->
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
+                <h1>Complexión corporal</h1>
+                <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
+            </header><!-- /header -->
+
+            <!-- Contenido Pagina 2 -->
+            <article data-role="content" >
+                <!-- Formulario para calcular el metabolismo basal -->
+                <form name="complexionForm" >
+                <!-- Sexo -->
+                <div data-role="fieldcontain">
+                    <label for="sexo">Sexo</label>
+                    <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
+                        <option value="Mujer">M</option>
+                        <option value="Hombre" selected>H</option>
+                    </select>
+                </div>
+                <!-- Altura -->
+                <div data-role="fieldcontain">
+                    <label for="altura">Altura (cm)</label>
+                    <input type="text" name="altura" id="altura" value="" />
+                </div>
+                <!-- Perimetro muñeca -->
+                <div data-role="fieldcontain">
+                    <label for="perimetro">Perímetro muñeca (cm)</label>
+                    <input type="text" name="perimetro" id="perimetro" value="" />
+                </div>
+                <!-- Resultado -->
+                <div data-role="fieldcontain">
+                    <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+                    <input type="text" name="resultado" id="resultado" value="" readonly/>
+                </div>
+                <!-- Botón -->
+                    <a href="#" data-role="button" data-icon="gear" onclick="calcularComplexion()" data-theme="e">Calcular Complexión Corporal</a>
+                </form>
+            </article><!-- /content -->
+
+
+
+            <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
+                <nav data-role="navbar" >
+                    <ul>
+                        <li><a href="mb.html">MB</a></li>
+                        <li><a href="pi.html">PI</a></li>
+                        <li><a href="icc.html">ICC</a></li>
+                        <li><a href="imc.html">IMC</a></li>
+                    </ul>
+                </nav>
+            </footer><!-- /footer -->
+
+            <!-- ###############   PANEL   ############### -->
+            <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+                <ul data-role="listview" data-theme="a" class="nav-search">
+                    <li data-icon="delete"><a href="#" data-rel="close">¿Complexión?</a></li>
+                </ul>
+                <div>
+                    <br>
+                    <div data-role="collapsible-set" data-inset="false">
+                        <div data-role="collapsible">
+                            <h3>Endomorfo</h3>
+                            <p>Se identifican con este biotipo a personas de complexión grande con cinturas escapulares y pélvicas amplias, robustas, fuertes, con buena masa muscular.</p> 
+
+                            <p>Suelen ser personas que presentan un peso corporal elevado ya que la abundante masa muscular, al ser más densa que la grasa, eleva el peso.</p> 
+
+                            <p>Este tipo de personas es muy agradecida al entrenamiento de fuerza y por su abundante masa muscular. Al comenzar un programa de actividad física, aumentan sus reservas de glucógeno muscular, mejorando el tono muscular rápidamente y elevando su peso entre uno e incluso tres kilos en los hombres.</p> 
+
+                            <p>Los hombres tienden a ganar grasa alrededor de la cintura (barriga) y las mujeres en la región glúteo-femoral(cartucheras).</p>
+                        </div>
+                        <div data-role="collapsible">
+                            <h3>Ectomorfo</h3>
+                            <p>Son las personas delgadas con extremidades largas. Son lo contrario a la tipología endomorfa. </p>
+
+                            <p>Suelen tener poca masa muscular y normalmente no suelen ganar con facilidad peso en forma de grasa.</p>
+                        </div>
+                        <div data-role="collapsible">
+                            <h3>Mesomorfo</h3>
+                            
+                            <p>También denominada tipología atlética , por su estructura músculo-esquelética bien proporcionada y masa muscular adecuada. 
+
+                            <p>Suelen ser personas que presentan buen rendimiento en deportes. 
+
+                            <p>La grasa se almacena de una forma más homogénea.</p>
+                            
+                        </div>
+                        <div data-role="collapsible" data-theme="a">
+                            <h3>Acumulación de peso</h3>
+                                <p>Según estos tres biotipos, es fácil que los problemas de sobrepeso los encontremos en:</p>
+                                <ul>
+                                    <li>La tipología mesomorfa por inactividad</li>
+
+                                    <li>La tipología endomorfa, que tiende al acumulo de grasa.</li>
+                                </ul>
+                                
+                                <p>Lo más habitual es que a las personas de tipología ectomorfa o longilínea, cuando acumulan grasa les sobren pocos kilos.</p>
+
+                                <p>En las personas atléticas, en situaciones de abandono de la práctica de actividad física podemos encontrar individuos a los que les sobren hasta cinco o seis kilos.</p> 
+
+                                <p>Finalmente, las personas de biotipo endomorfo pueden presentar sobrepesos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /panel -->
+
+            <!-- ###############   POPUP   ############### -->
+            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px" data-theme="a">
+                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>Es importante que el separador decimal sea el punto (.) y no la coma (,) .</p>
+
+            </div>
+            <!-- /popup -->
+            
+        </section><!-- /page -->
+
+
+    </body>
+
+</html>
