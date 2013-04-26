@@ -9,21 +9,18 @@ Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
 + Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías
-+ La complexion por el perímetro de la muñeca
 + Frecuencia cardiaca máxima (FCmáx)
 + Prediccion de la talla final del adolescente
 + Metabolismo (niño lactante)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-<<<<<<< HEAD
-=======
+
 Versión 0.9.2 (Beta)
 -----------------------------------
-+ (En desarrollo) Calculadora Frecuencia Cardíaca
-+ (En desarrollo) Calculadora Complexión Corporal
++ Calculadora Complexión Corporal
 
->>>>>>> origin/0.9.2
+
 Versión 0.9.1 (Estable)
 -----------------------------------
 Cambios en el metabolismo:
