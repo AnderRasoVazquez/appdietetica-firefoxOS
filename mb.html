@@ -38,12 +38,12 @@
                             <div data-role="controlgroup" data-type="horizontal">
                                 <legend>Sexo:</legend>
                                 <label for="sexo">Sexo</label>
-                                <select name="sexo" id="sexo">
+                                <select name="sexo" id="sexo" data-native-menu="false">
                                     <option value="Hombre">Hombre</option>
                                     <option value="Mujer">Mujer</option>
                                 </select>
                                 <label for="estado" >Estado</label>
-                                <select name="estado" id="estado">
+                                <select name="estado" id="estado" data-native-menu="false">
                                     <optgroup label="Opción por defecto">
                                         <option value="normal">Normal</option>
                                     <optgroup label="Más opciones para Mujer">
@@ -85,18 +85,18 @@
                         <!-- Opciones actividad -->
                         <div data-role="fieldcontain">
                             <label for="actividad">Índice de actividad</label>
-                            <select name="actividad" id="actividad">
-                                <option value="nula">Persona Sedentaria</option>
-                                <option value="ligera">Actividad Ligera</option>
-                                <option value="moderada">Actividad Moderada</option>
-                                <option value="intensa">Actividad Intensa</option>
-                                <option value="extrema">Actividad Extrema</option>
+                            <select name="actividad" id="actividad" data-native-menu="false">
+                                <option value="nula">Poco o ningún ejercicio</option>
+                                <option value="ligera">Ejercicio ligero (1-3 días)</option>
+                                <option value="moderada">Ejercicio moderado (3-5 días)</option>
+                                <option value="intensa">Ejercicio fuerte (6-7 días)</option>
+                                <option value="extrema">Ejercicio muy fuerte (2xdía muy duros)</option>
                             </select>
                         </div>
                         <!-- Opciones enfermedad -->
                         <div data-role="fieldcontain">
                             <label for="enfermedad">Índice de enfermedad</label>
-                            <select name="enfermedad" id="enfermedad">
+                            <select name="enfermedad" id="enfermedad" data-native-menu="false">
                                 <option value="nula">Persona Sana</option>
                                 <option value="leve">Enfermedad Leve</option>
                                 <option value="moderada">Enfermedad Moderada</option>
@@ -106,11 +106,6 @@
                                 <option value="sepsis">Sepsis</option>
                                 <option value="quemaduras">Quemaduras</option>
                             </select>
-                        </div>
-                        <!-- Efecto térmico de los alimentos -->
-                        <div data-role="fieldcontain">
-                            <label for="tef">Acción dinámica de los alimentos (%)</label>
-                            <input type="range" name="tef" id="tef" value="10" min="5" max="10" data-theme="a" data-track-theme="b" />
                         </div>
                         <!-- Resultado Total -->
                         <div data-role="fieldcontain">
@@ -155,13 +150,8 @@
                     <p>Como claro ejemplo del metabolismo basal está el caso del coma. La persona «en coma», está inactiva, pero tiene un gasto mínimo de calorías, razón por la que hay que seguir alimentando al organismo.</p>
 
                     <p> A ese cálculo hay que añadir las actividades extras que se pueden hacer cada día (metabolismo total). Una persona sana no ingerirá nunca menos de 1500 Kcal.</p>
-                    <ul>
-                        <li>1 -   para una persona inactiva o totalmente sedentaria</li>
-                        <li>1,2 - para una persona que realiza una actividad física ligera (andar un poco)</li>
-                        <li>1,4 - para alguien que realiza actividad media (actividades cotidianas dinámicas)</li>
-                        <li>1,6 - Para una persona muy activa (actividades cotidianas dinámicas y ejercicio de forma regular un mínimo de 3 veces a la semana)</li>
-                        <li>1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)</li>
-                    </ul>
+
+                    <p> Se está usando la ecuación de Harris Benedict</p>
                 </div> 
             </div>
             <!-- /panel -->

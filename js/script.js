@@ -68,11 +68,11 @@ function calcularMB() {
     1,8 - Persona de actividad extrema (actividades de elevado consumo calórico, trabajos extremos, deportistas de élite...)
 */
     // Definimos los valores que tiene cada nivel de actividad
-        var actNula = 1;
-        var actLigera = 1.2;
-        var actModerada = 1.4;
-        var actIntensa = 1.6;
-        var actExtrema = 1.8;
+        var actNula = 1.2;
+        var actLigera = 1.375;
+        var actModerada = 1.55;
+        var actIntensa = 1.725;
+        var actExtrema = 1.9;
 
     // Miramos cual es la opción escogida y le asignamos el valor correspondiente
         var actividadFisica = document.mbForm.actividad.value;
@@ -115,12 +115,6 @@ function calcularMB() {
         if (enf === "sepsis") {indEnf = enfSepsis;}
         if (enf === "quemaduras") {indEnf = enfQuemaduras;}
 
-/* 
-    EFECTO TÉRMICO DE LOS ALIMENTOS (Termic Effect of Food)
-    Es la energía que invierte el organismo en digerir, metabolizar y transportar los nutrientes de la dieta. 
-    Se establece un 10% de incremento sobre el valor hallado anteriormente.
- */
-        var tef = (Number(document.mbForm.tef.value))/100 + 1; //Convertimos el número para multiplicar Ejemplo: 5 --> 1,05
 
 //-------------------------------CALCULO DE DATOS-----------------------------------------
 
@@ -167,8 +161,8 @@ function calcularMB() {
 //----------ECUACIÓN DEL METABOLISMO TOTAL - calcula el resultado multiplicando el MB por el tipo de actividad y por enfermedad
 
 
-        // Multiplicamos el metabolismo basal por el deporte que haga y después por el tef
-        var mt = mb*deporte*indEnf*tef;
+        // Multiplicamos el metabolismo basal por el deporte que haga y después por la enfermedad
+        var mt = mb*deporte*indEnf;
 
         var mtInfo;
         // Si es hombre no sumaremos al resultado del incremento por embarazo o lactancia
