@@ -1,4 +1,0 @@
-[620:0822/234207:ERROR:platform_thread_win.cc(127)] NOT IMPLEMENTED
-[6108:0822/234535:INFO:dhcp_proxy_script_adapter_fetcher_win.cc(262)] Error fetching PAC URL from DHCP: 2
-[6108:0822/234536:INFO:simple_index_file.cc(332)] Simple Cache Index is being restored from disk.
-[6108:0822/234537:FATAL:url_request_context.cc(109)] Check failed: false. Leaked 1 URLRequest(s). First URL: http://wpad/wpad.dat.
