@@ -5,7 +5,6 @@ Este proyecto tienen la finalidad de crear una calculadora de fórmulas corporal
 
 Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener el código fuente, modificarlo y redistribuirlo libremente.
 
-
 Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 -----------------------------------
 + Calcular el metabolismo total mediante actividades físicas como por ejemplo, X minutos a Y intensidad de baloncesto son Z calorías
@@ -15,17 +14,20 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 1.1 rc2
+Versión 1.1.1 (estable)
+-----------------------------------
++ Links arreglados
++ Icono más agradable a la interfaz de Firefox OS
+
+Versión 1.1 (estable)
 -----------------------------------
 + Múltiples bugs arreglados
 
-
-Versión 0.9.2 (Beta)
+Versión 0.9.2
 -----------------------------------
 + Calculadora Complexión Corporal
 
-
-Versión 0.9.1 (Estable)
+Versión 0.9.1
 -----------------------------------
 Cambios en el metabolismo:
 + Añadido Efecto Térmico de los Alimentos
@@ -38,7 +40,7 @@ Cambios en el peso ideal:
 + Cálculo del porcentaje sobre el peso ideal (ej. estás al 110% de tu peso ideal)
 + Cálculo del peso ideal mediante más de una fórmula, el resultado final será una media entre todas las fórmulas.
 
-Versión 0.9 (Estable)
+Versión 0.9
 -----------------------------------
 + Añadida calculadora del Metabolismo Basal
 + Añadida calculadora del Metabolismo Total (de momento funciona con índices de actividad ligera, moderada o intensa)
@@ -46,3 +48,11 @@ Versión 0.9 (Estable)
 + Añadida calculadora del Peso Ideal 
 + Añadida calculadora del Índice Cintura Cadera (ICC)
 + Añadido el botón info (da información de cada fórmula)
+
+
+Créditos
+=======================
+Iconos de la aplicación
+-----------------------------------
+The Working Group, http://www.theworkinggroup.ca
+Icons8, http://icons8.com/
