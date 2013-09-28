@@ -1,0 +1,14 @@
+{
+  "version": "1.1",
+  "name": "AppDietetica",
+  "description": "Aplicacion para calculos antropometricos, Metabolismo Basal y Total, IMC, ICC, complexion corporal etc",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Ander Raso Vazquez",
+    "url": "https://twitter.com/AnderRasoVzquez"
+  },
+  "default_locale": "es"
+}
