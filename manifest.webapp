@@ -4,6 +4,7 @@
   "description": "Aplicacion para calculos antropometricos, Metabolismo Basal y Total, IMC, ICC, complexion corporal etc",
   "launch_path": "/index.html",
   "icons": {
+    "64": "/img/icon-64.png",
     "128": "/img/icon-128.png"
   },
   "developer": {
