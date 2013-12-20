@@ -14,9 +14,9 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 1.2 (en desarrollo)
+Versión 2.0 (beta)
 -----------------------------------
-+ [] Ordenar código
++ Diseño renovado
 
 Versión 1.1.1
 -----------------------------------
