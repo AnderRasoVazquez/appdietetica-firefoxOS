@@ -1,33 +1,35 @@
 <!-- ###############   IMC   ############### -->
-<section id="page2" data-role="page" data-theme="b">
+<section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="a" data-position="fixed">
-        <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>IMC</h1>
-        <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
+        <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
     </header><!-- /header -->
 
     <!-- Formulario IMC -->
     <article data-role="content" >
-        <!-- Formulario para calcular el metabolismo basal -->
         <form name="imcForm" >
-        <!-- Altura -->
-        <div data-role="fieldcontain">
-            <label for="peso">Peso (Kg)</label>
-            <input type="text" name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
-        </div>
         <!-- Peso -->
         <div data-role="fieldcontain">
+            <label for="peso">Peso (Kg)</label>
+            <input type="number" step="any" min=”0″ name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
+        </div>
+        <!-- Altura -->
+        <div data-role="fieldcontain">
             <label for="altura">Altura (m)</label>
-            <input type="text" name="altura" id="altura" value="" placeholder="Altura en metros..."/>
+            <input type="number" step="any" min=”0″ name="altura" id="altura" value="" placeholder="Altura en metros..."/>
         </div>
         <!-- Resultado -->
         <div data-role="fieldcontain">
-            <label for="resultado">Resultado<a href="#popupCloseRight" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="e" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+            <ul data-role="listview" data-split-icon="info" data-split-theme="b" data-inset="true">
+                <li data-split-theme="b"><a href="#" onclick="calcularIMC()">
+                <h2>Calcular IMC</h2>
+                    <a data-transition="flow" href="#popupCloseRight" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                </li>
+            </ul>
             <input type="text" name="resultado" id="resultado" value="" readonly/>
         </div>
-        <!-- Botón -->
-            <a href="#" data-role="button" data-icon="gear" onclick="calcularIMC()" data-theme="e">Calcular Índice de Masa Corporal</a>
         </form>
     </article><!-- /content -->
 
@@ -35,11 +37,11 @@
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a href="mb.html">MB</a></li>
-                <li><a href="pi.html">PI</a></li>
-                <li><a href="icc.html">ICC</a></li>
-                <li><a href="imc.html" class="ui-btn-active">IMC</a></li>
-                <li><a href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
+                <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
+                <li><a data-transition="slidefade" href="imc.html" class="ui-btn-active">IMC</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
@@ -47,7 +49,7 @@
     <!-- ###############   PANEL INFO   ############### -->
     <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
         <ul data-role="listview" data-theme="a" class="nav-search">
-            <li data-icon="delete"><a href="#" data-rel="close">¿IMC?</a></li>
+            <li data-icon="delete"><a href="#" data-rel="close">¿Qué es el IMC?</a></li>
         </ul>
         <div>
             <p>El IMC se utiliza para clasificar el estado ponderal de la persona, y se calcula a partir de la fórmula: peso(kg)/talla(m2).</p>

@@ -302,10 +302,15 @@ function calcularPI()
     var LemmensInfo = PIlemmens.toFixed(1)+" Kg";
     var porcentInfo = porcentPI.toFixed(2)+"%";
     // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
-    var errorFaltaDato = 'Te faltan campos por rellenar.';
     if( altura===0 || peso === 0)
     {
-        alert(errorFaltaDato);
+        document.piForm.resultado.value = 'Te faltan campos por rellenar.';
+        document.piForm.porcentaje.value = 'Te faltan campos por rellenar.';
+        document.piForm.Devine.value = 'Te faltan campos por rellenar.';
+        document.piForm.Robinson.value = 'Te faltan campos por rellenar.';
+        document.piForm.Miller.value = 'Te faltan campos por rellenar.';
+        document.piForm.Hamwi.value = 'Te faltan campos por rellenar.';
+        document.piForm.Lemmens.value = 'Te faltan campos por rellenar.';
     } 
     else 
     {

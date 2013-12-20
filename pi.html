@@ -1,37 +1,40 @@
 <!-- ###############   Peso ideal   ############### -->
-<section id="page2" data-role="page" data-theme="b">
+<section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="a" data-position="fixed">
-        <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>Peso Ideal</h1>
-        <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
+        <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
     </header><!-- /header -->
 
     <!-- Formulario peso ideal -->
     <article data-role="content" >
-        <!-- Formulario para calcular el metabolismo basal -->
         <form name="piForm" class="calcForm">
         <!-- Sexo -->
         <div data-role="fieldcontain">
-            <label for="sexo">Sexo</label>
-            <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
-                <option value="Mujer">M</option>
-                <option value="Hombre" selected>H</option>
+            <select name="sexo" id="sexo">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
             </select>
         </div>
         <!-- Altura -->
         <div data-role="fieldcontain">
             <label for="altura">Altura (cm)</label>
-            <input type="text" name="altura" id="altura" value="" placeholder="Altura en centímetros..."/>
+            <input type="number" step="any" min=”0″ name="altura" id="altura" value="" placeholder="Altura en centímetros..."/>
         </div>
         <!-- Peso -->
         <div data-role="fieldcontain">
             <label for="peso">Peso (Kg)</label>
-            <input type="text" name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
+            <input type="number" step="any" min=”0″ name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
         </div>
         <!-- Resultado -->
         <div data-role="fieldcontain">
-            <label for="resultado">Peso Ideal<a href="#popupCloseRight" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+            <ul data-role="listview" data-split-icon="info" data-split-theme="b" data-inset="true">
+                <li data-split-theme="b"><a href="#" onclick="calcularPI()">
+                <h2>Calcular Peso Ideal</h2>
+                    <a data-transition="flow" href="#popupCloseRight" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                </li>
+            </ul>
             <input type="text" name="resultado" id="resultado" value="" readonly/>
         </div>
         <!-- Porcentaje sobre el peso ideal -->
@@ -39,12 +42,10 @@
             <label for="porcentaje">% Sobre el Peso Ideal</label>
             <input type="text" name="porcentaje" id="porcentaje" value="" readonly/>
         </div>
-        <!-- Botón -->
-            <a href="#" data-role="button" data-icon="gear" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
 
         <!-- Colapsables con el resto de foórmulas -->
         <div data-role="collapsible">
-            <h3>Resultado del resto de fórmulas</h3>
+            <h3>Otras fórmulas</h3>
                 <!-- Formula de Devine -->
                 <div data-role="fieldcontain">
                     <label for="Devine">Devine</label>
@@ -79,11 +80,11 @@
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a href="mb.html">MB</a></li>
-                <li><a href="pi.html" class="ui-btn-active">PI</a></li>
-                <li><a href="icc.html">ICC</a></li>
-                <li><a href="imc.html">IMC</a></li>
-                <li><a href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html" class="ui-btn-active">PI</a></li>
+                <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
+                <li><a data-transition="slidefade" href="imc.html">IMC</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
@@ -91,7 +92,7 @@
     <!-- ###############   PANEL INFO   ############### -->
     <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
         <ul data-role="listview" data-theme="a" class="nav-search">
-            <li data-icon="delete"><a href="#" data-rel="close">¿Peso ideal?</a></li>
+            <li data-icon="delete"><a href="#" data-rel="close">¿Qué es el Peso ideal?</a></li>
         </ul>
         <div>
             <p>Siempre andamos preocupados por el peso y una de las primeras cosas que debemos de preguntarnos es cuál es nuestro peso ideal. Hay muchas fórmulas para calcularlo, de entrada decir que ninguna es totalmente exacta, el peso ideal depende de muchas aspectos de la persona y lo más que se puede hacer es una estimación.</p>
