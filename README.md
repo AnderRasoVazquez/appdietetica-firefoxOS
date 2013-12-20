@@ -14,12 +14,16 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 1.1.1 (estable)
+Versión 1.2 (en desarrollo)
+-----------------------------------
++ [] Ordenar código
+
+Versión 1.1.1
 -----------------------------------
 + Links arreglados
 + Icono más agradable a la interfaz de Firefox OS
 
-Versión 1.1 (estable)
+Versión 1.1
 -----------------------------------
 + Múltiples bugs arreglados
 

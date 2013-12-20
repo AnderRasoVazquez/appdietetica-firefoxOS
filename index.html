@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html lang="es">
-
     <head>
         <meta charset="UTF-8">
         <title>Calculadora antropométrica</title>
@@ -11,22 +10,17 @@
         <script src="js/jquery.mobile-1.3.0.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
-
     <body>
-   
-
-<!-- ###############   PAGINA 1   ############### -->
+<!-- ###############   Página principal   ############### -->
         <section id="page1" data-role="page">
             <!-- Header -->
             <header data-role="header">
                 <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
                 <h1>AppDietetica</h1>
-                
             </header><!-- /header -->
 
-            <!-- Contenido pagina 1 -->
+            <!-- Lista de fórmulas -->
             <article data-role="content">    
-                
                 <ul data-role="listview" data-filter="true" data-count-theme="e" data-filter-placeholder="Filtrar fórmulas...">
                 	<li data-role="list-divider" >Listado de cálculos antropométrioas</li>
                     <li><a href="mb.html">Metabolismo<span class="ui-li-count">Kcal</span></a></li>
@@ -35,7 +29,6 @@
                     <li><a href="pi.html">Peso Ideal<span class="ui-li-count">Kg</span></a></li>
                     <li><a href="complexion.html">Complexión Corporal<span class="ui-li-count">cm/cm</span></a></li>
                 </ul> 
-                
             </article><!-- /content -->
 
             <!-- Footer -->
@@ -43,14 +36,13 @@
                 <h4 style="font-size:0.9em">@anderrasovzquez</h4>
             </footer><!-- /footer -->
 
-
-            <!-- ###############   PANEL   ############### -->
+            <!-- ###############   PANEL INFO   ############### -->
             <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
                 <ul data-role="listview" data-theme="a" class="nav-search">
                     <li data-icon="delete"><a href="#" data-rel="close">Información de la versión</a></li>
                 </ul>
                 <div>
-                    <p><strong>v1.1 rc2</strong></p>
+                    <p><strong>v1.1.1</strong></p>
                     <p>Esta aplicación ha sido desarrollada por Ander Raso (<a target="_blank" href="https://twitter.com/AnderRasoVzquez">@anderrasovzquez</a>)</p>
                     <p>El objetivo de este proyecto es informar a las personas de su estado de salud.</p>
                     <p>Este proyecto ha sido desarrollado empleando Javacript, HTML5 y CSS3. Se está usando el framework jQuery Mobile.</p>

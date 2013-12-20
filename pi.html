@@ -1,139 +1,111 @@
-<!DOCTYPE HTML>
-<html lang="es">
+<!-- ###############   Peso ideal   ############### -->
+<section id="page2" data-role="page" data-theme="b">
+    <!-- Header -->
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
+        <h1>Peso Ideal</h1>
+        <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
+    </header><!-- /header -->
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Calculadora del metabolismo basal</title>
-        <meta name="viewport" content="width=device-width,user-scalable=no" />
-        <link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-        <script src="js/jquery.mobile-1.3.0.min.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <!-- Formulario peso ideal -->
+    <article data-role="content" >
+        <!-- Formulario para calcular el metabolismo basal -->
+        <form name="piForm" class="calcForm">
+        <!-- Sexo -->
+        <div data-role="fieldcontain">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
+                <option value="Mujer">M</option>
+                <option value="Hombre" selected>H</option>
+            </select>
+        </div>
+        <!-- Altura -->
+        <div data-role="fieldcontain">
+            <label for="altura">Altura (cm)</label>
+            <input type="text" name="altura" id="altura" value="" placeholder="Altura en centímetros..."/>
+        </div>
+        <!-- Peso -->
+        <div data-role="fieldcontain">
+            <label for="peso">Peso (Kg)</label>
+            <input type="text" name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
+        </div>
+        <!-- Resultado -->
+        <div data-role="fieldcontain">
+            <label for="resultado">Peso Ideal<a href="#popupCloseRight" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
+            <input type="text" name="resultado" id="resultado" value="" readonly/>
+        </div>
+        <!-- Porcentaje sobre el peso ideal -->
+        <div data-role="fieldcontain">
+            <label for="porcentaje">% Sobre el Peso Ideal</label>
+            <input type="text" name="porcentaje" id="porcentaje" value="" readonly/>
+        </div>
+        <!-- Botón -->
+            <a href="#" data-role="button" data-icon="gear" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
 
-    <body>
+        <!-- Colapsables con el resto de foórmulas -->
+        <div data-role="collapsible">
+            <h3>Resultado del resto de fórmulas</h3>
+                <!-- Formula de Devine -->
+                <div data-role="fieldcontain">
+                    <label for="Devine">Devine</label>
+                    <input type="text" name="Devine" id="Devine" value="" readonly/>
+                </div>
+                <!-- Formula de Robinson -->
+                <div data-role="fieldcontain">
+                    <label for="Robinson">Robinson</label>
+                    <input type="text" name="Robinson" id="Robinson" value="" readonly/>
+                </div>
+                <!-- Formula de Miller -->
+                <div data-role="fieldcontain">
+                    <label for="Miller">Miller</label>
+                    <input type="text" name="Miller" id="Miller" value="" readonly/>
+                </div>
+                <!-- Formula de Hamwi -->
+                <div data-role="fieldcontain">
+                    <label for="Hamwi">Hamwi</label>
+                    <input type="text" name="Hamwi" id="Hamwi" value="" readonly/>
+                </div>
+                <!-- Formula de Lemmens -->
+                <div data-role="fieldcontain">
+                    <label for="Lemmens">Lemmens</label>
+                    <input type="text" name="Lemmens" id="Lemmens" value="" readonly/>
+                </div>
+            </form>
+        </div> <!-- /colapsables -->
 
+    </article><!-- /content -->
+
+    <!-- footer -->
+    <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
+        <nav data-role="navbar" >
+            <ul>
+                <li><a href="mb.html">MB</a></li>
+                <li><a href="pi.html" class="ui-btn-active">PI</a></li>
+                <li><a href="icc.html">ICC</a></li>
+                <li><a href="imc.html">IMC</a></li>
+                <li><a href="complexion.html">CPX</a></li>
+            </ul>
+        </nav>
+    </footer><!-- /footer -->
+
+    <!-- ###############   PANEL INFO   ############### -->
+    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+        <ul data-role="listview" data-theme="a" class="nav-search">
+            <li data-icon="delete"><a href="#" data-rel="close">¿Peso ideal?</a></li>
+        </ul>
+        <div>
+            <p>Siempre andamos preocupados por el peso y una de las primeras cosas que debemos de preguntarnos es cuál es nuestro peso ideal. Hay muchas fórmulas para calcularlo, de entrada decir que ninguna es totalmente exacta, el peso ideal depende de muchas aspectos de la persona y lo más que se puede hacer es una estimación.</p>
+
+            <p>Conviene no quedarse sólo en el dato que nos salga de la ecuación, es decir, si me sale que mi peso ideal es de 70 kilos, siempre hay que poner un rango de 5 kilos arriba y abajo, así nos quedaría un rango de peso ideal de (65-75), donde podemos decir que estamos dentro de un peso saludable.</p>
+
+            <p>El peso ideal depende mucho del somatotipo que tengamos y del tipo de deporte que practiquemos. No es lo mismo el peso ideal para un maratoniano que para una persona que no hace deporte, todo hay que contextualizarlo.</p>
+        </div> 
+    </div><!-- /panel -->
+
+    <!-- ###############   INFO POPUP   ############### -->
+    <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px" data-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <p>La Fórmula de Robinson parece ser la mejor ecuación para el cálculo peso deseable / peso saludable en los hombres, sin embargo, ninguna fórmula predijo una aproximación a un IMC de 22 kg/m2 para las mujeres. Por lo tanto, en la práctica podría ser más útil el uso de rangos de IMC en lugar de fórmulas PI (peso Ideal) para los hombres y mujeres.</p>
+    </div> <!-- /popup -->
     
-        <!-- ###############   PAGINA 2 - MB   ############### -->
-        <section id="page2" data-role="page" data-theme="b">
-            <!-- Header -->
-            <header data-role="header" data-theme="a" data-position="fixed">
-                <a href="index.html" data-icon="home" data-theme="b">Inicio</a>
-                <h1>Peso Ideal</h1>
-                <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
-            </header><!-- /header -->
-
-            <!-- Contenido Pagina 2 -->
-            <article data-role="content" >
-                <!-- Formulario para calcular el metabolismo basal -->
-                <form name="piForm" class="calcForm">
-                <!-- Sexo -->
-                <div data-role="fieldcontain">
-                    <label for="sexo">Sexo</label>
-                    <select name="sexo" id="sexo" data-role="slider" data-track-theme="b" data-theme="c">
-                        <option value="Mujer">M</option>
-                        <option value="Hombre" selected>H</option>
-                    </select>
-                </div>
-                <!-- Altura -->
-                <div data-role="fieldcontain">
-                    <label for="altura">Altura (cm)</label>
-                    <input type="text" name="altura" id="altura" value="" placeholder="Altura en centímetros..."/>
-                </div>
-                <!-- Peso -->
-                <div data-role="fieldcontain">
-                    <label for="peso">Peso (Kg)</label>
-                    <input type="text" name="peso" id="peso" value="" placeholder="Peso en Kilogramos..."/>
-                </div>
-                <!-- Resultado -->
-                <div data-role="fieldcontain">
-                    <label for="resultado">Peso Ideal<a href="#popupCloseRight" data-role="button" data-icon="info" data-iconpos="notext" data-theme="b" data-inline="true" data-rel="popup" data-position-to="window">Alert</a></label>
-                    <input type="text" name="resultado" id="resultado" value="" readonly/>
-                </div>
-                <!-- Porcentaje sobre el peso ideal -->
-                <div data-role="fieldcontain">
-                    <label for="porcentaje">% Sobre el Peso Ideal</label>
-                    <input type="text" name="porcentaje" id="porcentaje" value="" readonly/>
-                </div>
-                <!-- Botón -->
-                    <a href="#" data-role="button" data-icon="gear" onclick="calcularPI()" data-theme="e">Calcular Peso Ideal</a>
-               
-            <div data-role="collapsible">
-                <h3>Resultado del resto de fórmulas</h3>
-                
-                    <!-- Formula de Devine -->
-                    <div data-role="fieldcontain">
-                        <label for="Devine">Devine</label>
-                        <input type="text" name="Devine" id="Devine" value="" readonly/>
-                    </div>
-                    <!-- Formula de Robinson -->
-                    <div data-role="fieldcontain">
-                        <label for="Robinson">Robinson</label>
-                        <input type="text" name="Robinson" id="Robinson" value="" readonly/>
-                    </div>
-                    <!-- Formula de Miller -->
-                    <div data-role="fieldcontain">
-                        <label for="Miller">Miller</label>
-                        <input type="text" name="Miller" id="Miller" value="" readonly/>
-                    </div>
-                    <!-- Formula de Hamwi -->
-                    <div data-role="fieldcontain">
-                        <label for="Hamwi">Hamwi</label>
-                        <input type="text" name="Hamwi" id="Hamwi" value="" readonly/>
-                    </div>
-                    <!-- Formula de Lemmens -->
-                    <div data-role="fieldcontain">
-                        <label for="Lemmens">Lemmens</label>
-                        <input type="text" name="Lemmens" id="Lemmens" value="" readonly/>
-                    </div>
-                </form>
-            </div>
-
-
-
-
-            </article><!-- /content -->
-
-
-            <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
-                <nav data-role="navbar" >
-                    <ul>
-                        <li><a href="mb.html">MB</a></li>
-                        <li><a href="pi.html" class="ui-btn-active">PI</a></li>
-                        <li><a href="icc.html">ICC</a></li>
-                        <li><a href="imc.html">IMC</a></li>
-                        <li><a href="complexion.html">CPX</a></li>
-                    </ul>
-                </nav>
-            </footer><!-- /footer -->
-
-            <!-- ###############   PANEL   ############### -->
-            <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-                <ul data-role="listview" data-theme="a" class="nav-search">
-                    <li data-icon="delete"><a href="#" data-rel="close">¿Peso ideal?</a></li>
-                </ul>
-                <div>
-                    <p>Siempre andamos preocupados por el peso y una de las primeras cosas que debemos de preguntarnos es cuál es nuestro peso ideal. Hay muchas fórmulas para calcularlo, de entrada decir que ninguna es totalmente exacta, el peso ideal depende de muchas aspectos de la persona y lo más que se puede hacer es una estimación.</p>
-
-                    <p>Conviene no quedarse sólo en el dato que nos salga de la ecuación, es decir, si me sale que mi peso ideal es de 70 kilos, siempre hay que poner un rango de 5 kilos arriba y abajo, así nos quedaría un rango de peso ideal de (65-75), donde podemos decir que estamos dentro de un peso saludable.</p>
-
-                    <p>El peso ideal depende mucho del somatotipo que tengamos y del tipo de deporte que practiquemos. No es lo mismo el peso ideal para un maratoniano que para una persona que no hace deporte, todo hay que contextualizarlo.</p>
-                </div> 
-            </div>
-            <!-- /panel -->
-
-            <!-- ###############   POPUP   ############### -->
-            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px" data-theme="a">
-                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <p>La Fórmula de Robinson parece ser la mejor ecuación para el cálculo peso deseable / peso saludable en los hombres, sin embargo, ninguna fórmula predijo una aproximación a un IMC de 22 kg/m2 para las mujeres. Por lo tanto, en la práctica podría ser más útil el uso de rangos de IMC en lugar de fórmulas PI (peso Ideal) para los hombres y mujeres.</p>
-
-            </div>
-            <!-- /popup -->
-            
-        </section><!-- /page -->
-
-
-    </body>
-
-</html>
+</section><!-- /page -->
