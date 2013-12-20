@@ -401,7 +401,14 @@ function calcularComplexion() {
         if (constitucion <= 9.9) {constitucionInfo = constitucion + " : Endomorfo";}
     }
     
-    document.complexionForm.resultado.value = constitucionInfo;
+    if( perimetroM===0 || altura === 0)
+    {
+        document.complexionForm.resultado.value = "Te faltan campos por rellenar.";
+    } 
+    else 
+    {
+        document.complexionForm.resultado.value = constitucionInfo;
+    }
 
 } // Cierra LA FUNCIÓN calcularComplexion()
 

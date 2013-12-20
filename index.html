@@ -4,54 +4,69 @@
         <meta charset="UTF-8">
         <title>Calculadora antropométrica</title>
         <meta name="viewport" content="width=device-width,user-scalable=no" />
-        <link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
         <script src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
-        <script src="js/jquery.mobile-1.3.0.min.js"></script>
+        <script src="js/jquery.mobile-1.4.0.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 <!-- ###############   Página principal   ############### -->
-        <section id="page1" data-role="page">
+        <section data-role="page">
             <!-- Header -->
-            <header data-role="header">
-                <a href="#nav-panel" data-icon="info" data-theme="b">Info</a>
-                <h1>AppDietetica</h1>
+            <header data-role="header" data-theme="b">
+                <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
+                <h1>#AppDietetica</h1>
             </header><!-- /header -->
 
             <!-- Lista de fórmulas -->
             <article data-role="content">    
-                <ul data-role="listview" data-filter="true" data-count-theme="e" data-filter-placeholder="Filtrar fórmulas...">
-                	<li data-role="list-divider" >Listado de cálculos antropométrioas</li>
-                    <li><a href="mb.html">Metabolismo<span class="ui-li-count">Kcal</span></a></li>
-                    <li><a href="imc.html">IMC (Índice Masa Corporal)<span class="ui-li-count">Kg/cm<sup>2</sup></span></a></li>
-                    <li><a href="icc.html">ICC (Índice Cintura Cadera)<span class="ui-li-count">cm/cm</span></a></li>
-                    <li><a href="pi.html">Peso Ideal<span class="ui-li-count">Kg</span></a></li>
-                    <li><a href="complexion.html">Complexión Corporal<span class="ui-li-count">cm/cm</span></a></li>
+                <ul data-autodividers="true" data-role="listview" data-filter="true"  data-filter-placeholder="Filtrar fórmulas...">
+                    <li><a data-transition="turn" href="complexion.html">
+                        <h2>Complexión Corporal</h2>
+                        <p>Averigua tu somatotipo.</p></a>
+                    </li>
+                    <li><a data-transition="turn" href="icc.html">
+                        <h2>ICC (Índice Cintura Cadera)</h2>
+                        <p>Calcula riesgo de enf. cardiovascular.</p></a>
+                    </li>
+                    <li><a data-transition="turn" href="imc.html">
+                        <h2>IMC (Índice de Masa Corporal)</h2>
+                        <p>Calcula tu estado de peso.</p></a>
+                    </li>
+                    <li><a data-transition="turn" href="mb.html">
+                        <h2>Metabolismo</h2>
+                        <p>Calcula tus necesidades calóricas.</p></a>
+                    </li>
+                    <li><a data-transition="turn" href="pi.html">
+                        <h2>Peso Ideal</h2>
+                        <p>Calcula tu peso ideal (relativo).</p></a>
+                    </li>
                 </ul> 
             </article><!-- /content -->
 
             <!-- Footer -->
-            <footer data-role="footer" data-position="fixed" data-theme="a">
+            <footer data-role="footer" data-position="fixed" data-theme="b">
                 <h4 style="font-size:0.9em">@anderrasovzquez</h4>
             </footer><!-- /footer -->
 
             <!-- ###############   PANEL INFO   ############### -->
-            <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-                <ul data-role="listview" data-theme="a" class="nav-search">
-                    <li data-icon="delete"><a href="#" data-rel="close">Información de la versión</a></li>
+            <div data-role="panel" data-position-fixed="true" id="nav-panel" data-theme="b">
+                <ul data-role="listview" class="nav-search">
+                    <li data-icon="delete"><a href="#" data-rel="close">Versión <strong>2.0</strong></a></li>
                 </ul>
                 <div>
-                    <p><strong>v1.1.1</strong></p>
-                    <p>Esta aplicación ha sido desarrollada por Ander Raso (<a target="_blank" href="https://twitter.com/AnderRasoVzquez">@anderrasovzquez</a>)</p>
-                    <p>El objetivo de este proyecto es informar a las personas de su estado de salud.</p>
-                    <p>Este proyecto ha sido desarrollado empleando Javacript, HTML5 y CSS3. Se está usando el framework jQuery Mobile.</p>
-                    <p>Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener el código fuente, modificarlo y redistribuirlo libremente.</p>
+                    <p>Aplicación desarrollada por Ander Raso Vázquez.</p>
+                    <a class="ui-btn ui-shadow" target="_blank" href="https://twitter.com/AnderRasoVzquez">@anderrasovzquez</a>
                     <p><strong>Nota Importante:</strong></p>
                     <ul>
                         <li>Usa el punto como separador decimal.</li>
                     </ul>
-                    <p>¿Quieres participar? ¡Colabora conmigo en <a target="_blank" href="https://github.com/AnderRasoVazquez/appdietetica">GitHub!</a></p>
+                    <p>El objetivo de este proyecto es informar a las personas de su estado de salud.</p>
+                    <p>Ha sido desarrollado empleando HTML5, CSS3, Javacript y jQuery. Se está usando el framework jQuery Mobile v1.4.0.</p>
+                    <p>Es un proyecto Open Source (Código Abierto), es decir, cualquiera puede obtener el código fuente, modificarlo y redistribuirlo libremente. El código está alojado en <a target="_blank" href="https://github.com/AnderRasoVazquez/appdietetica">GitHub</a>.</p>
+                    <p>¿Quieres participar? Aporta ideas, reporta fallos o incluso puedes ayudar en la programación.</p>
+                    <a target="_blank" href="https://github.com/AnderRasoVazquez/appdietetica" class="ui-btn ui-shadow">Colaborar</a>
                 </div> 
             </div>
             <!-- /panel -->
