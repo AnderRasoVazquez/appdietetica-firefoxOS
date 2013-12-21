@@ -1,13 +1,14 @@
 ###############   Complexión corporal   ############### -->
 <section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="b" data-position="fixed">
+    <header data-role="header" data-theme="a" data-position="fixed">
         <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>Complexión corporal</h1>
         <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
     </header><!-- /header -->
 
     <article data-role="content" >
+        <div class="ui-body ui-body-a ui-corner-all">
         <!-- Formulario complexión -->
         <form name="complexionForm" >
         <!-- Sexo -->
@@ -38,23 +39,24 @@
             <input type="text" name="resultado" id="resultado" value="" readonly/>
         </div>
         </form>
+    </div>
     </article><!-- /content -->
 
     <!-- footer -->
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
-                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
+                <li><a data-transition="slidefade" href="complexion.html" class="ui-btn-active">CPX</a></li>
                 <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
                 <li><a data-transition="slidefade" href="imc.html">IMC</a></li>
-                <li><a data-transition="slidefade" href="complexion.html" class="ui-btn-active">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
 
     <!-- ###############   PANEL INFO   ############### -->
-    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+    <div data-role="panel" data-position-fixed="true" data-theme="b" id="nav-panel">
         <ul data-role="listview" data-theme="a" class="nav-search">
             <li data-icon="delete"><a href="#" data-rel="close">Somatotipos</a></li>
         </ul>
@@ -70,12 +72,14 @@
                     <p>Este tipo de personas es muy agradecida al entrenamiento de fuerza y por su abundante masa muscular. Al comenzar un programa de actividad física, aumentan sus reservas de glucógeno muscular, mejorando el tono muscular rápidamente y elevando su peso entre uno e incluso tres kilos en los hombres.</p> 
 
                     <p>Los hombres tienden a ganar grasa alrededor de la cintura (barriga) y las mujeres en la región glúteo-femoral(cartucheras).</p>
+                    <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
                 </div>
                 <div data-role="collapsible">
                     <h3>Ectomorfo</h3>
                     <p>Son las personas delgadas con extremidades largas. Son lo contrario a la tipología endomorfa. </p>
 
                     <p>Suelen tener poca masa muscular y normalmente no suelen ganar con facilidad peso en forma de grasa.</p>
+                    <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
                 </div>
                 <div data-role="collapsible">
                     <h3>Mesomorfo</h3>
@@ -85,7 +89,7 @@
                     <p>Suelen ser personas que presentan buen rendimiento en deportes. 
 
                     <p>La grasa se almacena de una forma más homogénea.</p>
-                    
+                    <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
                 </div>
                 <div data-role="collapsible" data-theme="b">
                     <h3>Acumulación de peso</h3>
@@ -99,6 +103,7 @@
                         <p>En las personas atléticas, en situaciones de abandono de la práctica de actividad física podemos encontrar individuos a los que les sobren hasta cinco o seis kilos.</p> 
 
                         <p>Finalmente, las personas de biotipo endomorfo pueden presentar sobrepesos.</p>
+                        <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
                 </div>
             </div>
         </div>

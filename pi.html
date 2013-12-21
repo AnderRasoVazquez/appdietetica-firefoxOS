@@ -1,7 +1,7 @@
 <!-- ###############   Peso ideal   ############### -->
 <section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="b" data-position="fixed">
+    <header data-role="header" data-theme="a" data-position="fixed">
         <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>Peso Ideal</h1>
         <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
@@ -9,6 +9,7 @@
 
     <!-- Formulario peso ideal -->
     <article data-role="content" >
+        <div class="ui-body ui-body-a ui-corner-all">
         <form name="piForm" class="calcForm">
         <!-- Sexo -->
         <div data-role="fieldcontain">
@@ -73,25 +74,25 @@
                 </div>
             </form>
         </div> <!-- /colapsables -->
-
+    </div>
     </article><!-- /content -->
 
     <!-- footer -->
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
-                <li><a data-transition="slidefade" href="pi.html" class="ui-btn-active">PI</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
                 <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
                 <li><a data-transition="slidefade" href="imc.html">IMC</a></li>
-                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html" class="ui-btn-active">PI</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
 
     <!-- ###############   PANEL INFO   ############### -->
-    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-        <ul data-role="listview" data-theme="a" class="nav-search">
+    <div data-role="panel" data-position-fixed="true" data-theme="b" id="nav-panel">
+        <ul data-role="listview" class="nav-search">
             <li data-icon="delete"><a href="#" data-rel="close">¿Qué es el Peso ideal?</a></li>
         </ul>
         <div>
@@ -100,6 +101,7 @@
             <p>Conviene no quedarse sólo en el dato que nos salga de la ecuación, es decir, si me sale que mi peso ideal es de 70 kilos, siempre hay que poner un rango de 5 kilos arriba y abajo, así nos quedaría un rango de peso ideal de (65-75), donde podemos decir que estamos dentro de un peso saludable.</p>
 
             <p>El peso ideal depende mucho del somatotipo que tengamos y del tipo de deporte que practiquemos. No es lo mismo el peso ideal para un maratoniano que para una persona que no hace deporte, todo hay que contextualizarlo.</p>
+            <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
         </div> 
     </div><!-- /panel -->
 

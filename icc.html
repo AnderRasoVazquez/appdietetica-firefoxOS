@@ -1,7 +1,7 @@
 <!-- ###############   ICC   ############### -->
 <section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="b" data-position="fixed">
+    <header data-role="header" data-theme="a" data-position="fixed">
         <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>ICC</h1>
         <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
@@ -9,6 +9,7 @@
 
     <!-- Formulario ICC -->
     <article data-role="content" >
+        <div class="ui-body ui-body-a ui-corner-all">
         <!-- Formulario para calcular el metabolismo basal -->
         <form name="iccForm" >
         <!-- Sexo -->
@@ -40,24 +41,25 @@
             <input type="text" name="resultado" id="resultado" value="" readonly/>
         </div>
         </form>
+    </div>
     </article><!-- /content -->
 
     <!-- footer -->
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
-                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
                 <li><a data-transition="slidefade" href="icc.html" class="ui-btn-active">ICC</a></li>
                 <li><a data-transition="slidefade" href="imc.html" >IMC</a></li>
-                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
 
     <!-- ###############   PANEL INFO   ############### -->
-    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-        <ul data-role="listview" data-theme="a" class="nav-search">
+    <div data-role="panel" data-position-fixed="true" data-theme="b" id="nav-panel">
+        <ul data-role="listview" class="nav-search">
             <li data-icon="delete"><a href="#" data-rel="close">¿Qué es el ICC?</a></li>
         </ul>
         <div>
@@ -66,6 +68,7 @@
             <p>Los estudios indican que una relación entre cintura y cadera superior a 1.0 en varones y a 0.9 en mujeres está asociada a un aumento en la probabilidad de contraer diversas enfermedades (diabetes melitus, enfermedades coronarias, tensión arterial, entre otras).</p>
 
             <p>El índice se obtiene midiendo el perímetro de la cintura a la altura de la última costilla flotante, y el perímetro máximo de la cadera a nivel de los glúteos.</p>
+            <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
         </div> 
     </div>
     <!-- /panel -->

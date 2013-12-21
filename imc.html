@@ -1,7 +1,7 @@
 <!-- ###############   IMC   ############### -->
 <section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="b" data-position="fixed">
+    <header data-role="header" data-theme="a" data-position="fixed">
         <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>IMC</h1>
         <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
@@ -9,6 +9,7 @@
 
     <!-- Formulario IMC -->
     <article data-role="content" >
+        <div class="ui-body ui-body-a ui-corner-all">
         <form name="imcForm" >
         <!-- Peso -->
         <div data-role="fieldcontain">
@@ -31,24 +32,25 @@
             <input type="text" name="resultado" id="resultado" value="" readonly/>
         </div>
         </form>
+    </div>
     </article><!-- /content -->
 
     <!-- footer -->
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
-                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
                 <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
                 <li><a data-transition="slidefade" href="imc.html" class="ui-btn-active">IMC</a></li>
-                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
 
     <!-- ###############   PANEL INFO   ############### -->
-    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-        <ul data-role="listview" data-theme="a" class="nav-search">
+    <div data-role="panel" data-position-fixed="true" data-theme="b" id="nav-panel">
+        <ul data-role="listview" class="nav-search">
             <li data-icon="delete"><a href="#" data-rel="close">¿Qué es el IMC?</a></li>
         </ul>
         <div>
@@ -57,6 +59,7 @@
             <p>Se trata de un cálculo común tanto para hombres como para mujeres. Recuerda que este índice nutricional tan solo se aplica en adultos (no se aplica en ancianos ni deportistas de élite).</p>
 
             <p>Introduzca el valor del peso en la primera fila. Puede obtenerlo usted mismo/a con una buena balanza, a primera hora de la mañana, con la vejiga y el recto vacíos, en ayunas y con ropa interior. Introduzca también su altura.</p>
+            <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
         </div> 
     </div><!-- /panel -->
 

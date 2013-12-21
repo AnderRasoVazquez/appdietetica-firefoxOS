@@ -1,7 +1,7 @@
 <!-- ###############   Metabolismo   ############### -->
 <section data-role="page">
     <!-- Header -->
-    <header data-role="header" data-theme="b" data-position="fixed">
+    <header data-role="header" data-theme="a" data-position="fixed">
         <a data-transition="flip" href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Inicio</a>
         <h1>Metabolismo</h1>
         <a href="#nav-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Info</a>
@@ -9,6 +9,7 @@
 
     <!-- Formulario Metabolismo -->
     <article data-role="content" >
+        <div class="ui-body ui-body-a ui-corner-all">
         <!-- Formulario para calcular el metabolismo -->
         <form name="mbForm" class="calcForm">
                 <!-- Sexo -->
@@ -93,24 +94,25 @@
             <input type="text" name="resultadoTotal" id="resultadoTotal" value="" readonly/>
         </div>
         </form>
+    </div>
     </article><!-- /contenido pagina 1 -->
 
     <!-- footer -->
     <footer data-role="footer" data-position="fixed" data-theme="a" data-id="footer1">
         <nav data-role="navbar" >
             <ul>
-                <li><a data-transition="slidefade" href="mb.html" class="ui-btn-active">MB</a></li>
-                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
+                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
                 <li><a data-transition="slidefade" href="icc.html">ICC</a></li>
                 <li><a data-transition="slidefade" href="imc.html">IMC</a></li>
-                <li><a data-transition="slidefade" href="complexion.html">CPX</a></li>
+                <li><a data-transition="slidefade" href="mb.html" class="ui-btn-active">MB</a></li>
+                <li><a data-transition="slidefade" href="pi.html">PI</a></li>
             </ul>
         </nav>
     </footer><!-- /footer -->
 
     <!-- ###############   PANEL INFO   ############### -->
-    <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-        <ul data-role="listview" data-theme="a" class="nav-search">
+    <div data-role="panel" data-position-fixed="true" data-theme="b" id="nav-panel">
+        <ul data-role="listview" class="nav-search">
             <li data-icon="delete"><a href="#" data-rel="close">¿Metabolismo?</a></li>
         </ul>
         <div>
@@ -124,7 +126,9 @@
 
             <p> A ese cálculo hay que añadir las actividades extras que se pueden hacer cada día (metabolismo total). Una persona sana no ingerirá nunca menos de 1500 Kcal.</p>
 
-            <p> Se está usando la ecuación de Harris Benedict</p>
+            <p> Se está usando la ecuación de Harris Benedict </p>
+            <a href="#" data-rel="close" class="ui-btn ui-shadow">Cerrar panel</a>
+
         </div> 
     </div><!-- /panel -->
 
