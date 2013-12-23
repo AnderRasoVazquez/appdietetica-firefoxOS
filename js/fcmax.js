@@ -1,19 +1,8 @@
 //################################################################################################################# 
 //##################################----Fc Max Sedentario----######################################################
 /*
-http://www.vitonica.com/entrenamiento/calcula-tu-frecuencia-cardiaca-maxima
-http://www.vitonica.com/spinning/la-frecuencia-cardiaca-y-el-entrenamiento-como-se-calcula-que-valores-son-adecuados
-
-Sedentario
-FCmax = 220 – edad
-Para mujeres, como suelen tener la frecuencia cardíaca más alta se recomienda restar la edad a 225
-
-Entrenado
-Hombres: FCmax = 209 – (0,7 x edad)
-Mujeres: FCmax = 214 – (0,8 x edad)
 
 Lo ideal es dar intervalos de porcentajes de 10 para trabajar una zona según el objetivo perseguido:
-
 
 Intensidad muy ligera: 50-60%, útil para trabajos de recuperación, calentamiento y vuelta a la calma.
 
@@ -25,117 +14,72 @@ Intensidad dura:80-90%, este ya es un escalón donde la fatiga aparece de manera
 
 Intensidad máxima: 90-100%, es el máximo esfuerzo que pueden tolerar nuestros órganos y músculos, se trata de un entrenamiento anaeróbico que debido a su dureza sólo se puede aplicar en breves periodos de tiempo (menos de 5 minutos). Las agujetas y el ácido láctico harán aqui de las suyas, por eso sólo es recomendable para entrenamientos específicos de deportistas que busquen rendimiento.
 
-
 */
 
 
-function calcularFcMax()
+function sedentarioFC()
 {
 
 //----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
 
-    var pCintura = Number(document.iccForm.pCintura.value);
-    var pCadera = Number(document.iccForm.pCadera.value);
-    var sexo = document.iccForm.sexo.value;
+    var sexo = document.fcmax.sexoSedentario.value;
+    var edad = document.fcmax.edadSedentario.value;
+    var intensidad = document.fcmax.intensidadSedentario.value;
 
 //----------------------------CALCULO DE LA FORMULA----------------------------------------
 
-    var tuICC = pCintura / pCadera;
-    var tuICCInfo;
-    // Estas 2 variables indicarán el resultado
-    if (sexo === "Hombre") 
+
+    /*
+    Sedentario
+    FCmax = 220 – edad
+    Para mujeres, como suelen tener la frecuencia cardíaca más alta se recomienda restar la edad a 225
+    */
+    var resultado;
+    var resuladoFCMAX;
+    if (sexo == "Hombre") 
     {
-        if (tuICC >= 1) 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Riesgo Cardiovascular";
-        } 
-        else 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Sin Riesgo Cardiovascular";
-        }
-    }
-
-    if (sexo === "Mujer") 
+        resultado = 220 - edad;
+    };
+    if (sexo == "Mujer") 
     {
-        if (tuICC >= 0.85) 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Riesgo Cardiovascular";
-        } 
-        else 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Sin Riesgo Cardiovascular";
-        }
-    }
+        resultado = 225 - edad;
+    };
 
-    // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
-    var errorFaltaDato = 'Te faltan campos por rellenar.';
-    if( pCadera===0 || pCintura===0 )
-    {
-        document.iccForm.resultado.value = errorFaltaDato;
-    } 
-    else 
-    {
-        document.iccForm.resultado.value = tuICCInfo;
-    }
+    var resultadoFCMAX = (intensidad/100) * resultado;
+    document.fcmax.resultadoSedentario.value = resultadoFCMAX.toFixed(0) + " ppm";
 
-}// Cierra LA FUNCIÓN calcularICC()
+} // Fin de la funcion sedentarioFC
 
-//#####################################----FIN FUNCION ICC----#####################################################
-//#################################################################################################################
 
-//################################################################################################################# 
-//##################################----Fc Max Entrenado----#######################################################
-
-function calcularFcMax()
+function entrenadoFC()
 {
 
 //----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
 
-    var pCintura = Number(document.iccForm.pCintura.value);
-    var pCadera = Number(document.iccForm.pCadera.value);
-    var sexo = document.iccForm.sexo.value;
+    var sexo = document.fcmax.sexoEntrenado.value;
+    var edad = document.fcmax.edadEntrenado.value;
+    var intensidad = document.fcmax.intensidadEntrenado.value;
 
 //----------------------------CALCULO DE LA FORMULA----------------------------------------
 
-    var tuICC = pCintura / pCadera;
-    var tuICCInfo;
-    // Estas 2 variables indicarán el resultado
-    if (sexo === "Hombre") 
-    {
-        if (tuICC >= 1) 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Riesgo Cardiovascular";
-        } 
-        else 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Sin Riesgo Cardiovascular";
-        }
-    }
 
-    if (sexo === "Mujer") 
+    /*
+    Entrenado
+    Hombres: FCmax = 209 – (0,7 x edad)
+    Mujeres: FCmax = 214 – (0,8 x edad)
+    */
+    var resultado;
+    var resuladoFCMAX;
+    if (sexo == "Hombre") 
     {
-        if (tuICC >= 0.85) 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Riesgo Cardiovascular";
-        } 
-        else 
-        {
-            tuICCInfo = tuICC.toFixed(2)+" : Sin Riesgo Cardiovascular";
-        }
-    }
-
-    // En el caso de que todos los campos estén llenos haremos la fórmula, de no ser así saldrá el mensaje de error                
-    var errorFaltaDato = 'Te faltan campos por rellenar.';
-    if( pCadera===0 || pCintura===0 )
+        resultado = 209 - 0.7*edad;
+    };
+    if (sexo == "Mujer") 
     {
-        document.iccForm.resultado.value = errorFaltaDato;
-    } 
-    else 
-    {
-        document.iccForm.resultado.value = tuICCInfo;
-    }
+        resultado = 214 - 0.8*edad;
+    };
 
-}// Cierra LA FUNCIÓN calcularICC()
+    var resultadoFCMAX = (intensidad/100) * resultado;
+    document.fcmax.resultadoEntrenado.value = resultadoFCMAX.toFixed(0) + " ppm";
 
-//#####################################----FIN FUNCION ICC----#####################################################
-//#################################################################################################################
+} // Fin de la funcion entrenadoFC
