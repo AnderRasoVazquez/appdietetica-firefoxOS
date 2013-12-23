@@ -14,9 +14,11 @@ Futuras Ideas que quizá implemente (Cualquier sugerencia es bienvenida)
 + Cálculo del Índice Cintura Altura (ICT)
 + Cálculo de compartimentos corporales mediante pliegues
 
-Versión 2.0 (beta)
+Versión 2.0
 -----------------------------------
 + Diseño renovado
++ Añadida calculadora de la frecuencia cardíaca máxima
++ Bugs corregidos
 
 Versión 1.1.1
 -----------------------------------
